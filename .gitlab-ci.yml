@@ -10,13 +10,10 @@ before_script:
     - tar -xjf /tmp/criterion.tar.bz2 -C /tmp
     - cp -r /tmp/criterion-v2.3.0/include/criterion /usr/include
     - cp /tmp/criterion-v2.3.0/lib/* /usr/lib
+    - make clean all
 stages:
-    - compile
     - run
-build:
-    stage: compile
-    script:
-        - make clean all
+run:
     stage: run
     script:
         - bin/${EXEC} -S --verbose=0 --always-succeed --timeout 5
