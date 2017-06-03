@@ -44,7 +44,7 @@ ioperm(2)                  1.0
 iopl(2)                    1.0
 ipc(2)                     1.0
 kill(2)                    1.0
-lchown(2)                  1.0 
+lchown(2)                  1.0
 link(2)                    1.0
 lseek(2)                   1.0
 lstat(2)                   1.0

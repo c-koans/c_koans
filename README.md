@@ -20,5 +20,5 @@ Inside `src/` you will find a file for each of the following topics in C:
 - I/O: Open (read, write, append), Read, Write, Close, Dup2
 - Signals: sigaction, segfault, sigint (your OS's version of exceptions) (Use the unit test's acceptance of signal to test for success)
 - Malloc: Dynamic memory allocation vs Stack, calloc, realloc, free
-- Linked List Project: This one will be left for you to implement we have given all the unit tests for it, its a small culminating project that uses all you've learned from these tests. 
+- Linked List Project: This one will be left for you to implement we have given all the unit tests for it, its a small culminating project that uses all you've learned from these tests.
 
