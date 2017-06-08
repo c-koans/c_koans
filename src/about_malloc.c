@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-int* func() {
+int* malloc_func() {
 	int* return_ptr = malloc(sizeof(int));
 	*return_ptr = 15;
 	return return_ptr;
@@ -22,7 +22,7 @@ Test(c_koans, malloc_intro) {
      * If you allocate space for a variable on the stack in a function call, it'll be allocated in the function's stack frame. This means the space won't be valid after the function returns.
      * Space that was malloc'ed, however, is valid after functions return because it is allocated on the heap. Therefore, functions that need to return new pointers should allocate space for them using malloc.
      */
-	int* return_ptr = func();
+	int* return_ptr = malloc_func(); // goto line 5
 	cr_assert_eq(*return_ptr, 15);
 
 
