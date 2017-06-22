@@ -13,10 +13,11 @@ Test(c_koans, function_pointers) {
     size_t array_size = 5;
     char *names[] = {"Spike", "Ein", "Jet", "Ed", "Faye"};
     char *ordered_names[] = {"Ed", "Ein", "Faye", "Jet", "Spike"};
-
+    (void)array_size;
     /*
      * Function pointers are a tricky notion to handle for beginner C 
-     * programmers, but with a little practice you should be able to understand      * how they work.
+     * programmers, but with a little practice you should be able to understand      
+     * how they work.
      * 
      * To display function pointers, we will examine the usage of the C stdlib
      * function qsort, quicksort.
@@ -69,4 +70,7 @@ static int string_compare(const void *s1, const void *s2) {
      * to work.
      */
     return strcmp(*(char **)s1, *(char **)s2);
+}
+
+Test(c_koans, function_pointers_two) {
 }
