@@ -1,6 +1,7 @@
 #include <criterion/criterion.h>
 #include <stdbool.h>
 #include <limits.h>
+#include "c_koans.h"
 
 Test(c_koans, intro) {
     /*
@@ -31,25 +32,32 @@ Test(c_koans, variables) {
     /*
      * If you've had some experience with Java then C won't seem too foreign in terms of syntax
      */
-    char c = 'C';
-    short s = 320;
-    int i = 0xC0DE;
-    unsigned int ui = 0x80000000;
-    long l = 0b1010;
-    long int li = 033;
-    double d = 3.20;
-    double ld = 320e-2;
+    char c = TODO;
+    cr_assert_eq(c, 'C', "All characters in C are interpreted from the ascii table, go to your terminal and enter 'man ascii' to find this solution");
 
-    cr_assert_eq(c, 0x0, "All characters in C are interpreted from the ascii table, go to your terminal and enter 'man ascii' to find this solution");
-    cr_assert_eq(s, 0, "A short is 2 bytes");
-    cr_assert_eq(i, 0, "A int is 4 bytes");
+    short s = TODO;
+    cr_assert_eq(s, 0xBEE, "A short is 2 bytes");
 
+    int i = TODO;
+    cr_assert_eq(i, 0xBADBEEF, "A int is 4 bytes");
+
+    long l = TODO;
+    cr_assert_eq(l, 0xDEBA7AB1E, "A long is a larger integer type than int (supports unsigned).");
+
+    unsigned int ui = TODO;
     /* This unsigned int should exceed the maximum capacity of an INT (hint INT_MAX is declared in limits.h) */
-    cr_assert_gt(ui, 0x88888888, "An unsigned number can be used to increase the capacity of a value by only storing positive values");
+    cr_assert_gt(ui, 0xDEADBEEF, "The unsigned modifier can be used on a primitive data type to increase the upper limit by only storing positive values");
 
-    cr_assert_eq(l, 0xF, "A long is both a modifier and type");
-    cr_assert_eq(li, 33, "Numbers that start with zero are interpreted as octal");
+    long long ll = TODO;
 
+    cr_expect_eq(ll, 0xFF, "A number literal starting with 0x will be interpreted as hexadecimal");
+    cr_expect_eq(ll, 0b11111111, "A number literal starting with 0b will be interpreted as binary");
+    cr_assert_eq(ll, 0777, "A number literal starting with 0 will be interpreted as octal");
+
+    double d = 3.20;
     cr_assert_float_eq(d, (16 / 5), 0.000001, "Just like in Java division is by default done as integer division");
-    cr_assert_float_eq(ld, 3 + (1 / 5), 0.000001, "Addition also effects whether a number literal is interpreted as IEEE or 2's Comp");
+
+    double d2 = 320e-2;
+    cr_assert_float_eq(d2, 3 + (1 / 5), 0.000001, "Addition also effects whether a number literal is interpreted as IEEE or 2's Comp");
+
 }
