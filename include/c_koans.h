@@ -3,4 +3,8 @@
 
 #define TODO 0
 
+int string_compare(const void *p1, const void *p2);
+
+void double_an_int(int *i);
+
 #endif
