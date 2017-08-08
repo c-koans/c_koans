@@ -102,3 +102,21 @@ Test(c_koans, loops) {
 
 	cr_assert_eq(var, TODO, "Determine the result of the do-while loop's execution");
 }
+
+Test(c_koans, goto_and_labels) {
+	/*
+	 * The goto at the assembly level is an unconditional branch, 'j' or 'b' from MIPS.
+	 * It unconditionally jumps to a label within the local scope of a function.
+	 *
+	 * Jumping outside of a function, a long jump, requires other consturcts
+	 * that are platform dependent.
+	 */
+	int var = 10;
+
+	goto label;
+
+	var = 50;
+	/* The label syntax is some name (the same as a variable name) followed by a colon. */
+	label:
+	cr_assert_eq(var, TODO, "Determine the result of the flow of the function.");
+}
