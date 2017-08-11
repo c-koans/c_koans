@@ -27,7 +27,7 @@ void double_an_int(int *i) {
 
 int modify_global() {
     /*
-     * We modify the global variable, located in the .text section,
+     * We modify the global variable, located in the .data section,
      * visible to the entire program.
      */
     global_var++;
@@ -47,7 +47,7 @@ int modify_local() {
 int modify_local_static() {
     /*
      * Local static variables will be initialized only once and be located
-     * in the .text section. Local static variables can only be referenced
+     * in the .data section. Local static variables can only be referenced
      * inside the function because the name will be known inside the function.
      * This causes the value of the variable to be preserved across function calls.
      */
