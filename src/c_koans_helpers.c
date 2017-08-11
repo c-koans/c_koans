@@ -1,6 +1,8 @@
 #include "c_koans.h"
 #include <string.h>
 
+static int static_function(int);
+
 int global_var = 0;
 
 int string_compare(const void *s1, const void *s2) {
@@ -50,8 +52,27 @@ int modify_local_static() {
      * in the .data section. Local static variables can only be referenced
      * inside the function because the name will be known inside the function.
      * This causes the value of the variable to be preserved across function calls.
+     *
+     * The static qualifier has a double meaning depending on the scope it appears in;
+     * the next function will show this
      */
     static int i = 0;
     i++;
+    static_function(0); // we are calling this to avoid a compiler warning
     return i;
+}
+
+/*
+ * Static when used in a top-level scope will cause the variable or function
+ * to be visible only within the file. This is similar to the 'private' keyword
+ * in Java.
+ */
+static int static_int = 0;
+
+static int static_function(int n) {
+    static_int++;
+    if(n == 0)
+        return 0;
+    else
+        return static_int + static_function(n-1);
 }
