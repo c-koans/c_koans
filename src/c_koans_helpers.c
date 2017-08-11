@@ -1,4 +1,6 @@
 #include "c_koans.h"
+#include <errno.h>
+#include <stdlib.h>
 #include <string.h>
 
 static int static_function(int);
@@ -75,4 +77,51 @@ static int static_function(int n) {
         return 0;
     else
         return static_int + static_function(n-1);
+}
+
+struct person make_person(const char *name, int month, int day, int year) {
+    struct person ret;
+
+    /* is this a problem? What is the lifetime of this heap allocated memory? */
+    ret.name = calloc(strlen(name), sizeof(char));
+    strcpy(ret.name, name);
+
+    ret.bday.month = month;
+    ret.bday.day = day;
+    ret.bday.year = year;
+
+    return ret;
+}
+
+int
+make_person_better(struct person *person, const char *name, int month,
+    int day, int year) {
+
+    /*
+     * The access operator for a pointer to a struct is different that usual
+     * Instead of having to type (*person).bday.month for accessing a pointer
+     * to a struct's fields, the '->' operator is sugar for the last expression.
+     */
+    person->bday.month = month;
+    person->bday.day = day;
+    person->bday.year = year;
+
+    /*
+     * Errno is a global variable that is set by library functions to indicate an
+     * an error occured in that function. When we call calloc, an error might
+     * occur, such as the machine being out of memory.
+     */
+    errno = 0; // we set it to zero because all error numbers are non zero.
+
+    /* When is this freed? */
+    person->name = calloc(strlen(name), sizeof(char));
+
+    // We check if an error occured
+    if(errno)
+        return EXIT_FAILURE;
+
+    return EXIT_SUCCESS;
+    /* EXIT_SUCCESS and EXIT_FAILURE are pre defined macros for typical success
+     * or failure. On our VM they are 0 and 1 respectively.
+     */
 }

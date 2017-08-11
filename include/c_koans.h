@@ -3,6 +3,18 @@
 
 #define TODO 0
 #define TODO_NZ 1
+#define TODO_S ""
+
+typedef struct {
+    int month;
+    int day;
+    int year;
+} birthday;
+
+struct person {
+    char *name;
+    birthday bday;
+};
 
 extern int global_var;
 
@@ -14,4 +26,6 @@ int modify_global();
 int modify_local();
 int modify_local_static();
 
+struct person make_person(const char*,int,int,int);
+int make_person_better(struct person*,const char*,int,int,int);
 #endif
