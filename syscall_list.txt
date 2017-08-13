@@ -10,7 +10,6 @@ chroot(2)                  1.0
 clone(2)                   1.0
 close(2)                   1.0
 creat(2)                   1.0
-delete_module(2)           1.0
 dup(2)                     1.0
 dup2(2)                    1.0
 execve(2)                  1.0
@@ -38,10 +37,7 @@ getrlimit(2)               1.0
 getrusage(2)               1.0
 gettimeofday(2)            1.0
 getuid(2)                  1.0
-init_module(2)             1.0
 ioctl(2)                   1.0
-ioperm(2)                  1.0
-iopl(2)                    1.0
 ipc(2)                     1.0
 kill(2)                    1.0
 lchown(2)                  1.0
@@ -51,14 +47,12 @@ lstat(2)                   1.0
 mkdir(2)                   1.0
 mknod(2)                   1.0
 mmap(2)                    1.0
-modify_ldt(2)              1.0
 mount(2)                   1.0
 mprotect(2)                1.0
 munmap(2)                  1.0
 nice(2)                    1.0
 open(2)                    1.0
 pause(2)                   1.0
-personality(2)             1.2
 pipe(2)                    1.0
 ptrace(2)                  1.0
 quotactl(2)                1.0
@@ -70,8 +64,6 @@ rename(2)                  1.0
 rmdir(2)                   1.0
 select(2)                  1.0
 setdomainname(2)           1.0
-setfsgid(2)                1.2
-setfsuid(2)                1.2
 setgid(2)                  1.0
 setgroups(2)               1.0
 sethostname(2)             1.0
@@ -91,7 +83,6 @@ sigpending(2)              1.0
 sigprocmask(2)             1.0
 sigreturn(2)               1.0
 sigsuspend(2)              1.0
-socketcall(2)              1.0
 ssetmask(2)                1.0
 stat(2)                    1.0
 statfs(2)                  1.0
@@ -113,7 +104,6 @@ unlink(2)                  1.0
 uselib(2)                  1.0
 ustat(2)                   1.0
 utime(2)                   1.0
-vhangup(2)                 1.0
 wait4(2)                   1.0
 waitpid(2)                 1.0
 write(2)                   1.0
