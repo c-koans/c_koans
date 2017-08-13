@@ -1,5 +1,6 @@
 image: gcc:5.4.0
 variables:
+    GIT_SSL_NO_VERIFY: "true"
     EXEC: c_koans
     CRITERIONLINK: https://github.com/Snaipe/Criterion/releases/download/v2.3.2/criterion-v2.3.2-linux-x86_64.tar.bz2
 before_script:
