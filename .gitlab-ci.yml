@@ -1,10 +1,10 @@
 image: gcc:5.4.0
 variables:
     EXEC: c_koans
-    CRITERIONLINK: https://github.com/Snaipe/Criterion/releases/download/v2.3.0/criterion-v2.3.0-linux-x86_64.tar.bz2#
+    CRITERIONLINK: https://github.com/Snaipe/Criterion/releases/download/v2.3.2/criterion-v2.3.2-linux-x86_64.tar.bz2
 before_script:
     - apt-get update &>/dev/null
-    - apt-get install -y curl make gcc bzip2 libjansson-dev libreadline6 libreadline6-dev &>/dev/null
+    - apt-get install -y curl make gcc bzip2 &>/dev/null
     - mkdir -p /usr/include/criterion /usr/lib
     - curl -sLo /tmp/criterion.tar.bz2 $CRITERIONLINK
     - tar -xjf /tmp/criterion.tar.bz2 -C /tmp
@@ -16,4 +16,4 @@ stages:
 run:
     stage: run
     script:
-        - bin/${EXEC} -S --verbose=0 --always-succeed --timeout 5
+        - bin/${EXEC} -S --verbose=0 --timeout 5
