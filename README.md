@@ -22,3 +22,7 @@ Inside `src/` you will find a file for each of the following topics in C:
 - Malloc: Dynamic memory allocation vs Stack, calloc, realloc, free
 - Linked List Project: This one will be left for you to implement we have given all the unit tests for it, its a small culminating project that uses all you've learned from these tests.
 
+# Contributors
+----
+Neal Beeken
+Brian Gavin
