@@ -25,3 +25,4 @@ Inside `src/` you will find a file for each of the following topics in C:
 # Contributors
 - Neal Beeken
 - Brian Gavin
+- May Hoque
