@@ -3,18 +3,22 @@
 #include <limits.h>
 #include "c_koans.h"
 
-Test(c_koans, intro) {
+Test(about_basics, intro) {
     /*
      * Welcome to the C language
-     * To begin let's understand the framework in which you will be fixing each unit test
-     * This is Criterion a Testing framework. More can be read on it here: http://criterion.readthedocs.io/en/stable/
+     * To begin let's understand the framework in which you will be fixing each
+     * unit test
+     * This is Criterion a Testing framework. More can be read on it here:
+     * http://criterion.readthedocs.io/en/stable/
      *
-     * Tests are built on assertions, simple evaluations of truth in order to assess the correctness of code
+     * Tests are built on assertions, simple evaluations of truth in order to
+     * assess the correctness of code
      */
     cr_assert(false, "This should be true, assertion - a confident and forceful statement of fact");
     /*
-     * There is no true and false in C by default. As you can see on line 2. We've included the
-     * standard bool header which adds in true and false literals we are used to.
+     * There is no true and false in C by default. As you can see on line 2.
+     * We've included the standard bool header which adds in true and false
+     * literals we are used to.
      * In C, true and false are nonzero and zero values respectively
      * The %d allows us to do string interpolation, the 'd' specifies to interpret the input as an int
      */
@@ -28,7 +32,7 @@ Test(c_koans, intro) {
     cr_assert_eq(true, 0, "Something is not nothing");
 }
 
-Test(c_koans, variables) {
+Test(about_basics, variables) {
     /*
      * If you've had some experience with Java then C won't seem too foreign in terms of syntax
      */

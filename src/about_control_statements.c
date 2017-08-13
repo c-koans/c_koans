@@ -7,7 +7,7 @@
  * familiar to proficient Java programmers like ourselves...
  */
 
-Test(c_koans, ifs) {
+Test(about_control_statements, ifs) {
 	/*
 	 * The if statent is the most familiar: the statement inside of the parenthesis
 	 * is evaluated. The only difference from Java is the lack of a boolean type.
@@ -35,7 +35,7 @@ Test(c_koans, ifs) {
     cr_assert_eq(var, TODO, "Determine the control flow for this block, too");
 }
 
-Test(c_koans, switch_block) {
+Test(about_control_statements, switch_block) {
 	/* The switch is also familiar, and similar to the else-if.
 	 * The difference is that a switch block will check a value only
 	 * with "constant" integer expressions.
@@ -57,7 +57,7 @@ Test(c_koans, switch_block) {
 	cr_assert_eq(var, TODO, "Determine the control flow for this block.");
 }
 
-Test(c_koans, loops) {
+Test(about_control_statements, loops) {
 	/* C possesses three types of loops. The first of which is the 'while'
 	 * The while loop will execute everything inside of its bllock until the
 	 * condition it checks is 'false', meaning that until it is 0.
@@ -103,7 +103,7 @@ Test(c_koans, loops) {
 	cr_assert_eq(var, TODO, "Determine the result of the do-while loop's execution");
 }
 
-Test(c_koans, goto_and_labels) {
+Test(about_control_statements, goto_and_labels) {
 	/*
 	 * The goto at the assembly level is an unconditional branch, 'j' or 'b' from MIPS.
 	 * It unconditionally jumps to a label within the local scope of a function.

@@ -18,7 +18,7 @@ int fib(int n) {
         return fib(n-1) + fib(n-2);
 }
 
-Test(c_koans, function_basics) {
+Test(about_functions, function_basics) {
     /*
      *Functions are pieces of modularized code. They are equivalent in purpose
      * to methods in Java. Since there are no Classes in C, C functions can be
@@ -44,7 +44,7 @@ Test(c_koans, function_basics) {
  */
 int function_prototype(int, int);
 
-Test(c_koans, function_prototypes) {
+Test(about_functions, function_prototypes) {
     /* We will test if our function can be called since it has been declared */
     cr_assert_eq(function_prototype(1,2), TODO, "What does the function return?");
 }
@@ -54,7 +54,7 @@ int function_prototype(int i, int j) {
     return i+j;
 }
 
-Test(c_koans, function_scope_and_vars) {
+Test(about_functions, function_scope_and_vars) {
     /*
      * Functions are the main scope of the C language. The location of variables
      * are determined by their declaration location in reference to the functions.

@@ -13,7 +13,7 @@
 
 #define MAX(a,b) (a)
 
-Test(c_koans, macro_definitions) {
+Test(about_preprocessor, macro_definitions) {
     /*
      * The C Preprocessor allows us to 'define' things called Macros.
      * Macros in C operate exactly as you remember them in MIPS. The Preprocessor
@@ -62,7 +62,7 @@ Test(c_koans, macro_definitions) {
 
 #define MOVE_ME
 
-Test(c_koans, conditional_defines) {
+Test(about_preprocessor, conditional_defines) {
     /*
      * Conditional logic can be done with a few different directives.
      * These directives include 'if', 'elif', 'ifdef', ifndef' and 'else'
@@ -89,7 +89,7 @@ Test(c_koans, conditional_defines) {
 
 #define STRINGIZE(arg) #arg
 
-Test(c_koans, stringizing){
+Test(about_preprocessor, stringizing){
     /*
      * The Preprocessor has a functionality known as "Stringizing"
      * What stringizing does is replace a macro argument with a string literal.
@@ -107,7 +107,7 @@ Test(c_koans, stringizing){
 
 #define THIS_IS(b) ALWAYS_##b
 
-Test(c_koans, macro_concatination){
+Test(about_preprocessor, macro_concatination){
     /*
      * Concatination is denoted by the use of a '##' inside of a macro.
      * When the macro is expanded, it will combine both tokens on each side of
@@ -123,7 +123,7 @@ Test(c_koans, macro_concatination){
 
 #define VARIADIC_ARGUMENTS(...) #__VA_ARGS__
 
-Test(c_koans, variadic_macros) {
+Test(about_preprocessor, variadic_macros) {
     /*
      * The Preprocessor has the power to take advantage of variable length arguments
      * On a simple level, it is not different than regular macro substitution since it

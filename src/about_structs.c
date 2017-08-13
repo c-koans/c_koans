@@ -14,7 +14,7 @@ struct point2d {
     int y;
 }; // note this semi-colon
 
-Test(c_koans, struct_basics) {
+Test(about_structs, struct_basics) {
     /* Structs are initialized very simply. */
     /* We have to specify that the 'point2d' type is a struct */
     struct point2d p1;
@@ -70,7 +70,7 @@ Test(c_koans, struct_basics) {
     cr_assert_eq(p4.three_d.two_d.x, TODO, "What is the value of x, after all the struct access?");
 }
 
-Test(c_koans, structs_and_functions_and_pointers) {
+Test(about_structs, structs_and_functions_and_pointers) {
     /* A struct can be passed as a variable to a function, just like any other type */
     struct person person1;
 
@@ -95,7 +95,7 @@ Test(c_koans, structs_and_functions_and_pointers) {
     cr_assert_eq(person2.bday.month, TODO, "What is the month for this person?");
 }
 
-Test(c_koans, arrays_of_structs) {
+Test(about_structs, arrays_of_structs) {
     /*
      * Arrays of structures operate as would expect, when declaring the size,
      * it accounts for the size of the struct.
@@ -140,7 +140,7 @@ Test(c_koans, arrays_of_structs) {
     cr_assert_eq(sizeof (struct s3), TODO, "What is the size of the packed struct?");
 }
 
-Test(c_koans, self_referential_structs) {
+Test(about_structs, self_referential_structs) {
     /*
      * Structs can be self referential, and have pointers to structs of the
      * same struct that it is as members of the struct.

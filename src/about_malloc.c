@@ -9,7 +9,7 @@ int* malloc_func() {
     return return_ptr;
 }
 
-Test(c_koans, malloc_intro) {
+Test(about_malloc, malloc_intro) {
     /*
      * In C, there are 2 ways to allocate space for a variable:
      * 1. int i = 5; This allocates sizeof(int) bytes on the stack.
@@ -42,7 +42,7 @@ Test(c_koans, malloc_intro) {
     cr_assert_eq(*return_ptr, TODO);
 }
 
-Test(c_koans, free) {
+Test(about_malloc, free) {
     /*
      * Dynamic memory in C is manually managed.
      *
@@ -62,12 +62,22 @@ Test(c_koans, free) {
      * function, and the pointer must not point to space that has already been
      * freed.
      *
-     * The pointer may be NULL. This will cause free to not do anything and return.
+     * The pointer may be NULL. This will cause free to not do anything and
+     * return.
      */
     free(ip);
+
+    /*
+     * Since we have just freed ip, it is a good idea to set ip to NULL to
+     * show that we are done using it.
+     */
+     ip = NULL;
+
+     cr_assert_eq(ip, (void*)TODO_NZ, "What is ip now? What would happen if we \
+        dereference ip?");
 }
 
-Test(c_koans, calloc) {
+Test(about_malloc, calloc) {
     /*
      * The next function in the alloc family is calloc. Calloc does the same
      * operation as malloc, but it initialized the memory to 0, meaning that
@@ -87,7 +97,7 @@ Test(c_koans, calloc) {
     cr_assert_eq(strlen(s), TODO, "What is the new length?");
 }
 
-Test(c_koans, realloc) {
+Test(about_malloc, realloc) {
     /*
      * The final function in the family of alloc functions is realloc.
      *
@@ -103,7 +113,8 @@ Test(c_koans, realloc) {
 
     ip = realloc(ip, sizeof(long));
 
-    cr_assert_eq(*(unsigned long*)ip, TODO, "What bytes of ip were preserved when it is increased in size?");
+    cr_assert_eq(*(unsigned long*)ip, TODO, "What bytes of ip were preserved \
+        when it is increased in size?");
 
     ip = realloc(ip, sizeof(short));
 

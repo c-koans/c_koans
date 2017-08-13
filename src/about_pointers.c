@@ -2,7 +2,7 @@
 #include <string.h>
 #include "c_koans.h"
 
-Test(c_koans, pointers_and_addresses) {
+Test(about_pointers, pointers_and_addresses) {
 	/*
 	 * Pointers are the trademark of the C language, and the largest mental
 	 * block of programmers of languages where they do not explicitly exist.
@@ -41,7 +41,7 @@ Test(c_koans, pointers_and_addresses) {
 	cr_assert_eq(sizeof(n), TODO, "What type is n?");
 }
 
-Test(c_koans, pointers_as_function_arguments) {
+Test(about_pointers, pointers_as_function_arguments) {
 	/*
 	 * Since functions in C are call-by-value, there is seemingly no way to
 	 * change a value of an argument inside of the function. This is where
@@ -54,7 +54,7 @@ Test(c_koans, pointers_as_function_arguments) {
 	cr_assert_eq(i, TODO, "What is the new value of i?");
 }
 
-Test(c_koans, pointers_arrays_and_arithmetic) {
+Test(about_pointers, pointers_arrays_and_arithmetic) {
 	/*
 	 * In C, pointers and arrays are intertwined.
 	 * Since we have already learned a little bit about arrays, we will focus
@@ -85,7 +85,7 @@ Test(c_koans, pointers_arrays_and_arithmetic) {
 	cr_assert_eq((int)(p2-p1), TODO, "What is the number of ints difference?");
 }
 
-Test(c_koans, function_pointers) {
+Test(about_pointers, function_pointers) {
     /* Declaration of an array of strings and the sorted equivalent */
     size_t array_size = 5;
     char *names[] = {"Spike", "Ein", "Jet", "Ed", "Faye"};
