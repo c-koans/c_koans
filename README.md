@@ -3,7 +3,7 @@
 
 A kōan 公案 (pinyin: gōng'àn) is a story, dialogue, question, or statement, which is used in Zen practice to provoke the "great doubt" and test a student's progress in Zen practice.
 
-In this assignment you will be learning the syntax and practices of C through a series of lessons in the form of [Unit tests](https://en.wikipedia.org/wiki/Unit_testing). These preprepared tests are all failing, by going through each one and repairing them to make them pass you will learn a small component of the C programming language.
+Here you may learn the syntax and practices of C through a series of lessons in the form of [Unit tests](https://en.wikipedia.org/wiki/Unit_testing). These preprepared tests are all failing, by going through each one and repairing them to make them pass you will learn a small component of the C programming language.
 
 # Sections
 
@@ -22,3 +22,6 @@ Inside `src/` you will find a file for each of the following topics in C:
 - Malloc: Dynamic memory allocation vs Stack, calloc, realloc, free
 - Linked List Project: This one will be left for you to implement we have given all the unit tests for it, its a small culminating project that uses all you've learned from these tests.
 
+# Contributors
+- Neal Beeken
+- Brian Gavin
