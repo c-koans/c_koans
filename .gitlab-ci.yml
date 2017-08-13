@@ -17,4 +17,4 @@ stages:
 run:
     stage: run
     script:
-        - bin/${EXEC} -S --verbose=0 --timeout 5
+        - bin/${EXEC} -S --always-succeed --verbose=0 --timeout 5
