@@ -9,8 +9,8 @@ before_script:
     - mkdir -p /usr/include/criterion /usr/lib
     - curl -sLo /tmp/criterion.tar.bz2 $CRITERIONLINK
     - tar -xjf /tmp/criterion.tar.bz2 -C /tmp
-    - cp -r /tmp/criterion-v2.3.0/include/criterion /usr/include
-    - cp /tmp/criterion-v2.3.0/lib/* /usr/lib
+    - cp -r /tmp/criterion-v2.3.2/include/criterion /usr/include
+    - cp /tmp/criterion-v2.3.2/lib/* /usr/lib
     - make clean all
 stages:
     - run
