@@ -26,3 +26,4 @@ Inside `src/` you will find a file for each of the following topics in C:
 - Neal Beeken
 - Brian Gavin
 - May Hoque
+- Jaykumar Patel
