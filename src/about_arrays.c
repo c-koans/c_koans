@@ -113,5 +113,5 @@ Test(about_arrays, what_is_an_array){
      * 'null byte' or 'null terminator', which is really just a zero-byte, to
      * do this. This byte is always found at the end of a string, and if it is
      * missing, can lead to very dangerous and unpredictable bugs. */
-    cr_assert_eq(a_string[12], TODO, "Null terminators are essential!");
+    cr_assert_eq(a_string[12], TODO_NZ, "Null terminators are essential!");
 }
