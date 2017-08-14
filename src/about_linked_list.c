@@ -108,6 +108,7 @@ Test(c_koans, insert_into_linked_list) {
    */
   struct linked_list *new_node = insert(&head, 2);
 
+  cr_assert_eq(new_node->next, TODO, "What is the new node pointing to?");
   cr_assert_eq(head.next, TODO, "Where is head.next pointing to?");
   cr_assert_eq(head.next->data, TODO, "What data is stored in the node after `head`?");
 }
@@ -145,6 +146,7 @@ Test(c_koans, delete_from_linked_list) {
   /* Do something with removed node .. */
   struct linked_list *deleted_node = delete(&nodes[4], 3);
 
+  cr_assert_eq(deleted_node->next, "What was the deleted node pointing to?");
   cr_assert_eq(nodes[3].next, TODO, "What is the next node after nodes[3]?");
   cr_assert_eq(nodes[3].next->data, TODO, "What data is contained in that node?");
 }
