@@ -150,7 +150,6 @@ Test(about_dataclasses, about_const) {
     cr_assert_eq(*jp, TODO, "Attemping to change the value jp pointer to will "
                             "result in a compiler error.");
 
-
     /* A const after the '*' in a pointer declaration defines a pointer that can
      * not point anywhere else.
      */
