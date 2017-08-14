@@ -1,6 +1,7 @@
 #include <criterion/criterion.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <limits.h>
 #include "c_koans.h"
