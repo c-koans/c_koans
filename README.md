@@ -1,5 +1,7 @@
 # c_koans
 
+[![Build Status](https://travis-ci.org/c-koans/c_koans.svg?branch=master)](https://travis-ci.org/c-koans/c_koans)
+
 A kōan 公案 (pinyin: gōng'àn) is a story, question, or statement, which is used in Zen practice to provoke the "great doubt" and test a student's progress in Zen practice.
 
 Inspired by [ruby koans](http://rubykoans.com/) you may learn the syntax and practices of C through a series of lessons in the form of [Unit tests](https://en.wikipedia.org/wiki/Unit_testing). These preprepared tests are all failing, by going through each one and repairing them to make them pass you will learn a small component of the C programming language.
