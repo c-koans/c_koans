@@ -1,6 +1,6 @@
 # c_koans
 
-[![Build Status](https://travis-ci.org/c-koans/c_koans.svg?branch=master)](https://travis-ci.org/c-koans/c_koans)
+[![Build Status](https://travis-ci.org/c-koans/c_koans.svg?branch=develop)](https://travis-ci.org/c-koans/c_koans)
 
 A kōan 公案 (pinyin: gōng'àn) is a story, question, or statement, which is used in Zen practice to provoke the "great doubt" and test a student's progress in Zen practice.
 
