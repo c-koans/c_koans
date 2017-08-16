@@ -37,8 +37,10 @@ Test(about_pointers, pointers_and_addresses)
      * '*'.
      */
 
+    // clang-format off
     int k, *l;
-    int *m, n;
+    int* m, n;
+    // clang-format on
 
     cr_assert_eq(sizeof(k), TODO, "What type is k?");
     cr_assert_eq(sizeof(l), TODO, "What type is l?");
@@ -72,6 +74,7 @@ Test(about_pointers, pointers_arrays_and_arithmetic)
     int *p1 = &a[0];
     int *p2 = &a[1];
 
+    cr_assert_eq(*a, TODO, "Remember what the ");
     cr_assert_eq(*p1, TODO, "What does p1 point to?");
     cr_assert_eq(*p2, TODO, "What does p2 point to?");
 
@@ -79,11 +82,14 @@ Test(about_pointers, pointers_arrays_and_arithmetic)
      * Since p1 now points to the array, we can treat p1 as being the array
      * and do arithmetic to mirror that.
      * Pointer arithmetic is 'smart', it will do the arithmetic based on the
-     * size
-     * of the type that is being pointed to.
+     * size of the type that is being pointed to.
      */
 
     cr_assert_eq(*(p1 + 1), TODO, "What is the value at this address?");
+
+    cr_assert_eq(p1[1],
+        TODO,
+        "Bracket notation is just syntactic sugar for pointer arithmetic.");
 
     /*
      * Think about this example, if p1 points to the first int and p2 points to
@@ -92,17 +98,21 @@ Test(about_pointers, pointers_arrays_and_arithmetic)
     cr_assert_eq((long)((long)p2 - (long)p1),
         TODO,
         "What is the number of bytes diffence?");
-    cr_assert_eq(
-        (int)(p2 - p1), TODO, "What is the number of ints difference?");
+
+    cr_assert_eq((int)(p2 - p1),
+        TODO,
+        "What is the number of ints difference?");
 }
 
 Test(about_pointers, function_pointers)
 {
     /* Declaration of an array of strings and the sorted equivalent */
-    size_t array_size = 5;
+
+    const size_t array_size = 5;
     char *names[] = { "Spike", "Ein", "Jet", "Ed", "Faye" };
-    char *ordered_names[] = { "Ed", "Ein", "Faye", "Jet", "Spike" };
-    (void)array_size;
+    char *sorted_names[] = { "Ed", "Ein", "Faye", "Jet", "Spike" };
+    (void)array_size; // to avoid a compiler error
+
     /*
      * Function pointers are a tricky notion to handle for beginner C
      * programmers, but with a little practice you should be able to understand
@@ -141,8 +151,14 @@ Test(about_pointers, function_pointers)
      * function for strings that can be used by qsort.
      */
 
-    // write the line of code to sort names here.
+    /*
+     * Write the line of code to sort names here.
+     * the comparison function to use can be found found in c_koans_helpers.c,
+     * named string_compare
+     */
 
-    cr_assert(strcmp(names[0], ordered_names[0]) == 0,
-        "Names are not sorted. Try again.");
+    // qsort();
+
+    cr_assert_arr_eq_cmp(sorted_names, names, array_size, string_compare,
+        "The names are not sorted.");
 }

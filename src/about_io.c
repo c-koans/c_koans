@@ -46,9 +46,9 @@ Test(about_io, intro)
     printf("long: TODO\n", l);
     printf("pointer: TODO\n", p);
 #endif
-    cr_assert_file_contents_eq_str(stdout, "char: J\nint: -1\nunsigned int:    \
-    4294967295\nhexadecimal unsigned int: ffffffff\nfloat: 3.140000\nlong:     \
-    3735928559\npointer: 0x400\n");
+    cr_assert_file_contents_eq_str(stdout,
+        "char: J\nint: -1\nunsigned int: 4294967295\nhexadecimal unsigned int: "
+        "ffffffff\nfloat: 3.140000\nlong: 3735928559\npointer: 0x400\n");
 }
 
 Test(about_io, file_stream)

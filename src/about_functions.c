@@ -24,7 +24,7 @@ fib(int n)
 Test(about_functions, function_basics)
 {
     /*
-     *Functions are pieces of modularized code. They are equivalent in purpose
+     * Functions are pieces of modularized code. They are equivalent in purpose
      * to methods in Java. Since there are no Classes in C, C functions can be
      * thought of as static methods in Java.
      */

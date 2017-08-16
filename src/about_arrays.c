@@ -1,8 +1,4 @@
 #include "c_koans.h"
-
-// TODO: remove
-#include <stdio.h>
-
 #include <criterion/criterion.h>
 
 void
@@ -25,9 +21,8 @@ Test(about_arrays, what_is_an_array)
     array[4] = 5;
 
     /*
-     * An array is a sequential
-     * declaration of memory with each item being the size of the type (int in
-     * this case)
+     * An array is a sequential declaration of memory with each item being the
+     * size of the type (in this case, int)
      */
     // Change this to: 'cr_assert_not_null'
     cr_assert_null(array,
@@ -35,6 +30,10 @@ Test(about_arrays, what_is_an_array)
         "it has an address %p",
         array);
 
+    /*
+     * An array variable's name is merely a label for the address of the first
+     * element in the array.
+     */
     cr_assert_eq(*array,
         0,
         "Dereferencing this label's address gives us the "
@@ -42,9 +41,8 @@ Test(about_arrays, what_is_an_array)
 
     cr_assert_eq(*(array + 2),
         array[0],
-        "Dereferencing with an offset is the "
-        "same as using the bracket notation "
-        "to access");
+        "Dereferencing with an offset is the same as using the bracket notation"
+        " to access");
 
     /*
      * An important operator in C is sizeof:
@@ -75,8 +73,7 @@ Test(about_arrays, what_is_an_array)
     int another_array[5] = { 1, 2, 3, 4, 5 };
     cr_assert_eq(another_array[3],
         TODO,
-        "We should be seeing the some "
-        "element's value.");
+        "We should be seeing the some element's value.");
 
     /* You will not always know how many items an array might hold at runtime.
      * In these kinds of scenarios, you can't use the syntax we've been using.
@@ -84,6 +81,7 @@ Test(about_arrays, what_is_an_array)
      * then you can start using it as an array again. */
     const size_t INIT_ARR_SIZE = 5;
     int *yet_another_array = calloc(INIT_ARR_SIZE, sizeof(int));
+
     /* Thankfully, the syntax is just like it was before. */
     unsigned i;
     for (i = 0; i < INIT_ARR_SIZE; i++) {
@@ -120,7 +118,8 @@ Test(about_arrays, what_is_an_array)
     /* Often, we find ourselves in need of representing strings in a program,
      * and usually, we are able to use something like a String class or type.
      * Unfortunately, C does not have any such notion of a string baked into
-     * the language like in some other languages (e.g. Java). */
+     * the language like in some other languages (e.g. Java).
+     */
     const char a_string[13] = "hello world!"; // This is a 'string' in C.
 
     /* In C, a string is simply an array of characters. */
@@ -133,6 +132,7 @@ Test(about_arrays, what_is_an_array)
      * need to be able to know when a string ends. We use something called a
      * 'null byte' or 'null terminator', which is really just a zero-byte, to
      * do this. This byte is always found at the end of a string, and if it is
-     * missing, can lead to very dangerous and unpredictable bugs. */
+     * missing, can lead to very dangerous and unpredictable bugs.
+     */
     cr_assert_eq(a_string[12], TODO_NZ, "Null terminators are essential!");
 }
