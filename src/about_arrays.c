@@ -5,12 +5,17 @@
 
 #include <criterion/criterion.h>
 
-void func(int* array){
-  cr_assert_eq(sizeof(array), 0, "That same array gives a different size "
-                                 "when passed into this function");
+void
+func(int *array)
+{
+    cr_assert_eq(sizeof(array),
+        0,
+        "That same array gives a different size "
+        "when passed into this function");
 }
 
-Test(about_arrays, what_is_an_array){
+Test(about_arrays, what_is_an_array)
+{
     /* Here is a declaration of 5 integers */
     int array[5];
     array[0] = 1;
@@ -25,15 +30,21 @@ Test(about_arrays, what_is_an_array){
      * this case)
      */
     // Change this to: 'cr_assert_not_null'
-    cr_assert_null(array, "An array declared in this way is a label meaning "
-                          "it has an address %p", array);
+    cr_assert_null(array,
+        "An array declared in this way is a label meaning "
+        "it has an address %p",
+        array);
 
-    cr_assert_eq(*array, 0, "Dereferencing this label's address gives us the "
-                            "value at that point");
+    cr_assert_eq(*array,
+        0,
+        "Dereferencing this label's address gives us the "
+        "value at that point");
 
-    cr_assert_eq(*(array + 2), array[0], "Dereferencing with an offset is the "
-                                         "same as using the bracket notation "
-                                         "to access");
+    cr_assert_eq(*(array + 2),
+        array[0],
+        "Dereferencing with an offset is the "
+        "same as using the bracket notation "
+        "to access");
 
     /*
      * An important operator in C is sizeof:
@@ -51,52 +62,60 @@ Test(about_arrays, what_is_an_array){
      * parenthesis.
      */
 
-    cr_assert_eq(sizeof(array), 0, "sizeof an array can be tricky is it size "
-                                   "of a pointer or sum of all memory the "
-                                   "array takes up?");
+    cr_assert_eq(sizeof(array),
+        0,
+        "sizeof an array can be tricky is it size "
+        "of a pointer or sum of all memory the "
+        "array takes up?");
     func(array); // Goto line 3
 
     /* You do not always have to take up so much lines to create an array whose
      * contents you already know. You can use {...} syntax to create such an
      * array elegantly. */
-    int another_array[5] = {1, 2, 3, 4, 5};
-    cr_assert_eq(another_array[3], TODO, "We should be seeing the some "
-                                         "element's value.");
+    int another_array[5] = { 1, 2, 3, 4, 5 };
+    cr_assert_eq(another_array[3],
+        TODO,
+        "We should be seeing the some "
+        "element's value.");
 
     /* You will not always know how many items an array might hold at runtime.
      * In these kinds of scenarios, you can't use the syntax we've been using.
      * Instead, you'll have to think about the array as a pointer first, and
      * then you can start using it as an array again. */
     const size_t INIT_ARR_SIZE = 5;
-    int* yet_another_array = calloc(INIT_ARR_SIZE, sizeof(int));
+    int *yet_another_array = calloc(INIT_ARR_SIZE, sizeof(int));
     /* Thankfully, the syntax is just like it was before. */
     unsigned i;
-    for(i = 0; i < INIT_ARR_SIZE; i++){
-      /* You can loop on arrays, as long as you handle the indexing logic
-       * correctly. */
-      yet_another_array[i] = i + 1;
+    for (i = 0; i < INIT_ARR_SIZE; i++) {
+        /* You can loop on arrays, as long as you handle the indexing logic
+         * correctly. */
+        yet_another_array[i] = i + 1;
     }
 
     /* When we need to, we can make an array bigger to accomodate via realloc.
      */
-    if(!realloc(yet_another_array, INIT_ARR_SIZE * sizeof(int))){
-      exit(1);
+    if (!realloc(yet_another_array, INIT_ARR_SIZE * sizeof(int))) {
+        exit(1);
     }
 
     yet_another_array[INIT_ARR_SIZE] = 6;
     unsigned where = 0;
-    for(i = 0; i < INIT_ARR_SIZE+1; i++){
-      if(yet_another_array[i] == INIT_ARR_SIZE+1){
-        where = i;
-      }
+    for (i = 0; i < INIT_ARR_SIZE + 1; i++) {
+        if (yet_another_array[i] == INIT_ARR_SIZE + 1) {
+            where = i;
+        }
 
-      cr_assert_eq(yet_another_array[i], TODO, "Although we started with an "
-                                               "array of 5 elements, we "
-                                               "should be able to find a "
-                                               "sixth element as well.");
+        cr_assert_eq(yet_another_array[i],
+            TODO,
+            "Although we started with an "
+            "array of 5 elements, we "
+            "should be able to find a "
+            "sixth element as well.");
     }
-    cr_assert_eq(where, TODO, "We should be seeing a certain value, given the "
-                              "way we set these elements' values.");
+    cr_assert_eq(where,
+        TODO,
+        "We should be seeing a certain value, given the "
+        "way we set these elements' values.");
 
     /* Often, we find ourselves in need of representing strings in a program,
      * and usually, we are able to use something like a String class or type.
@@ -105,8 +124,10 @@ Test(about_arrays, what_is_an_array){
     const char a_string[13] = "hello world!"; // This is a 'string' in C.
 
     /* In C, a string is simply an array of characters. */
-    cr_assert_eq(a_string[3], TODO, "We may be interested in a particular "
-                                    "character of strings.");
+    cr_assert_eq(a_string[3],
+        TODO,
+        "We may be interested in a particular "
+        "character of strings.");
 
     /* In C, memory is just memory. It is just a bunch of bytes. Therefore, we
      * need to be able to know when a string ends. We use something called a

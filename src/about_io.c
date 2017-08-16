@@ -1,34 +1,35 @@
+#include "c_koans.h"
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
 #include <stdio.h>
-#include "c_koans.h"
 
-Test(about_io, intro) {
+Test(about_io, intro)
+{
     /*
         This koan will teach you about input and output in C. Let's go over the
         basics of printing out text to the terminal with a format. This is
         one of the most common ways of printing information out in C.
     */
-    printf("Hello World!\n");  //NOTE: Don't forget the newline character (\n)!
+    printf("Hello World!\n"); // NOTE: Don't forget the newline character (\n)!
 
     /*
         To print variables you must use a % modifier in the format string passed
         to printf. For example:
     */
-    char* string = "World!";
+    char *string = "World!";
     printf("Hello %s\n", string);
 
-    /*
-        There are many modifiers present in C. You can access a list of them at:
-        http://www.cplusplus.com/reference/cstdio/printf/
-        Complete the following:
-    */
+/*
+    There are many modifiers present in C. You can access a list of them at:
+    http://www.cplusplus.com/reference/cstdio/printf/
+    Complete the following:
+*/
 
-    /*
-        Use the references to determine which format specifier will give the
-        proper output. When you complete this koan, change the literal on line
-        37 to a nonzero value. This is to avoid compilation errors.
-    */
+/*
+    Use the references to determine which format specifier will give the
+    proper output. When you complete this koan, change the literal on line
+    37 to a nonzero value. This is to avoid compilation errors.
+*/
 
 #if 0
     char c = 'J';
@@ -50,7 +51,8 @@ Test(about_io, intro) {
     3735928559\npointer: 0x400\n");
 }
 
-Test(about_io, file_stream) {
+Test(about_io, file_stream)
+{
     /*
         The standard io library, <stdio.h>, provides a FILE type for standard io
         usages. Most functions that use standard in or out have a stream counter
@@ -74,4 +76,3 @@ Test(about_io, file_stream) {
 
     cr_assert_str_eq(buf, TODO_S, "rsrc/file.txt to see what buf should be");
 }
-

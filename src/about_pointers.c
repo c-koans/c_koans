@@ -1,95 +1,107 @@
+#include "c_koans.h"
 #include <criterion/criterion.h>
 #include <string.h>
-#include "c_koans.h"
 
-Test(about_pointers, pointers_and_addresses) {
-	/*
-	 * Pointers are the trademark of the C language, and the largest mental
-	 * block of programmers of languages where they do not explicitly exist.
-	 */
-	int i = 10;
-	int j = 20;
+Test(about_pointers, pointers_and_addresses)
+{
+    /*
+     * Pointers are the trademark of the C language, and the largest mental
+     * block of programmers of languages where they do not explicitly exist.
+     */
+    int i = 10;
+    int j = 20;
 
-	/* This is the syntax of the pointer declaration. It is a type name
-	 * followed by a '*' somewhere between the type name and the variable name.
-	 *
-	 * The '&' operator gives the address of a variable.
-	 */
-	int *iptr = &i;
-	int* jptr = &j;
+    /* This is the syntax of the pointer declaration. It is a type name
+     * followed by a '*' somewhere between the type name and the variable name.
+     *
+     * The '&' operator gives the address of a variable.
+     */
+    int *iptr = &i;
+    int *jptr = &j;
 
-	cr_assert_eq(sizeof(i), TODO, "What is the size of an int on a 64 bit machine?");
-	cr_assert_eq(sizeof(iptr), TODO, "What is the size of an address on a 64 bit machine?");
+    cr_assert_eq(
+        sizeof(i), TODO, "What is the size of an int on a 64 bit machine?");
+    cr_assert_eq(sizeof(iptr),
+        TODO,
+        "What is the size of an address on a 64 bit machine?");
 
-	/* The '*' operator has another meaning when used not in a declaration to
-	 * 'dereference' a pointer, and give the value at that address.
-	 */
+    /* The '*' operator has another meaning when used not in a declaration to
+     * 'dereference' a pointer, and give the value at that address.
+     */
 
-	cr_assert_eq(*jptr, TODO, "What is the value that jptr 'points' to?");
+    cr_assert_eq(*jptr, TODO, "What is the value that jptr 'points' to?");
 
-	/*
-	 * Multi-variable declarations mixing pointers and the type it points to
-	 * can be hard to interpret depending on your choice of position for the '*'.
-	 */
+    /*
+     * Multi-variable declarations mixing pointers and the type it points to
+     * can be hard to interpret depending on your choice of position for the
+     * '*'.
+     */
 
-	int k, *l;
-	int* m, n;
+    int k, *l;
+    int *m, n;
 
-	cr_assert_eq(sizeof(k), TODO, "What type is k?");
-	cr_assert_eq(sizeof(l), TODO, "What type is l?");
-	cr_assert_eq(sizeof(m), TODO, "What type is m?");
-	cr_assert_eq(sizeof(n), TODO, "What type is n?");
+    cr_assert_eq(sizeof(k), TODO, "What type is k?");
+    cr_assert_eq(sizeof(l), TODO, "What type is l?");
+    cr_assert_eq(sizeof(m), TODO, "What type is m?");
+    cr_assert_eq(sizeof(n), TODO, "What type is n?");
 }
 
-Test(about_pointers, pointers_as_function_arguments) {
-	/*
-	 * Since functions in C are call-by-value, there is seemingly no way to
-	 * change a value of an argument inside of the function. This is where
-	 * pointers come in to play.
-	 */
-	int i = 10;
+Test(about_pointers, pointers_as_function_arguments)
+{
+    /*
+     * Since functions in C are call-by-value, there is seemingly no way to
+     * change a value of an argument inside of the function. This is where
+     * pointers come in to play.
+     */
+    int i = 10;
 
-	double_an_int(&i);
+    double_an_int(&i);
 
-	cr_assert_eq(i, TODO, "What is the new value of i?");
+    cr_assert_eq(i, TODO, "What is the new value of i?");
 }
 
-Test(about_pointers, pointers_arrays_and_arithmetic) {
-	/*
-	 * In C, pointers and arrays are intertwined.
-	 * Since we have already learned a little bit about arrays, we will focus
-	 * on the pointer aspect.
-	 */
+Test(about_pointers, pointers_arrays_and_arithmetic)
+{
+    /*
+     * In C, pointers and arrays are intertwined.
+     * Since we have already learned a little bit about arrays, we will focus
+     * on the pointer aspect.
+     */
 
-	int a[5] = {1,2,3,4,5};
-	int *p1 = &a[0];
-	int *p2 = &a[1];
+    int a[5] = { 1, 2, 3, 4, 5 };
+    int *p1 = &a[0];
+    int *p2 = &a[1];
 
-	cr_assert_eq(*p1, TODO, "What does p1 point to?");
-	cr_assert_eq(*p2, TODO, "What does p2 point to?");
+    cr_assert_eq(*p1, TODO, "What does p1 point to?");
+    cr_assert_eq(*p2, TODO, "What does p2 point to?");
 
-	/*
-	 * Since p1 now points to the array, we can treat p1 as being the array
-	 * and do arithmetic to mirror that.
-	 * Pointer arithmetic is 'smart', it will do the arithmetic based on the size
-	 * of the type that is being pointed to.
-	 */
+    /*
+     * Since p1 now points to the array, we can treat p1 as being the array
+     * and do arithmetic to mirror that.
+     * Pointer arithmetic is 'smart', it will do the arithmetic based on the
+     * size
+     * of the type that is being pointed to.
+     */
 
-	cr_assert_eq(*(p1 + 1), TODO, "What is the value at this address?");
+    cr_assert_eq(*(p1 + 1), TODO, "What is the value at this address?");
 
-	/*
-	 * Think about this example, if p1 points to the first int and p2 points to
-	 * the second int, what is the number of bytes between the two addresses?
-	 */
-	cr_assert_eq((long)((long)p2 - (long)p1), TODO, "What is the number of bytes diffence?");
-	cr_assert_eq((int)(p2-p1), TODO, "What is the number of ints difference?");
+    /*
+     * Think about this example, if p1 points to the first int and p2 points to
+     * the second int, what is the number of bytes between the two addresses?
+     */
+    cr_assert_eq((long)((long)p2 - (long)p1),
+        TODO,
+        "What is the number of bytes diffence?");
+    cr_assert_eq(
+        (int)(p2 - p1), TODO, "What is the number of ints difference?");
 }
 
-Test(about_pointers, function_pointers) {
+Test(about_pointers, function_pointers)
+{
     /* Declaration of an array of strings and the sorted equivalent */
     size_t array_size = 5;
-    char *names[] = {"Spike", "Ein", "Jet", "Ed", "Faye"};
-    char *ordered_names[] = {"Ed", "Ein", "Faye", "Jet", "Spike"};
+    char *names[] = { "Spike", "Ein", "Jet", "Ed", "Faye" };
+    char *ordered_names[] = { "Ed", "Ein", "Faye", "Jet", "Spike" };
     (void)array_size;
     /*
      * Function pointers are a tricky notion to handle for beginner C
@@ -132,5 +144,5 @@ Test(about_pointers, function_pointers) {
     // write the line of code to sort names here.
 
     cr_assert(strcmp(names[0], ordered_names[0]) == 0,
-	      "Names are not sorted. Try again.");
+        "Names are not sorted. Try again.");
 }

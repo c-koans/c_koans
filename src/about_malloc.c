@@ -1,15 +1,18 @@
+#include "c_koans.h"
 #include <criterion/criterion.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "c_koans.h"
 
-int* malloc_func() {
-    int* return_ptr = malloc(sizeof(int));
+int *
+malloc_func()
+{
+    int *return_ptr = malloc(sizeof(int));
     *return_ptr = 15;
     return return_ptr;
 }
 
-Test(about_malloc, malloc_intro) {
+Test(about_malloc, malloc_intro)
+{
     /*
      * In C, there are 2 ways to allocate space for a variable:
      * 1. int i = 5; This allocates sizeof(int) bytes on the stack.
@@ -25,7 +28,7 @@ Test(about_malloc, malloc_intro) {
      *
      * Type 'man malloc' into your terminal to find out more.
      */
-    int* i = malloc(sizeof(int));
+    int *i = malloc(sizeof(int));
     *i = 5;
     cr_assert_eq(*i, 6);
 
@@ -38,11 +41,12 @@ Test(about_malloc, malloc_intro) {
      * because it is allocated on the heap. Therefore, functions that need
      * to return new pointers should allocate space for them using malloc.
      */
-    int* return_ptr = malloc_func(); // goto line 5
+    int *return_ptr = malloc_func(); // goto line 5
     cr_assert_eq(*return_ptr, TODO);
 }
 
-Test(about_malloc, free) {
+Test(about_malloc, free)
+{
     /*
      * Dynamic memory in C is manually managed.
      *
@@ -71,13 +75,14 @@ Test(about_malloc, free) {
      * Since we have just freed ip, it is a good idea to set ip to NULL to
      * show that we are done using it.
      */
-     ip = NULL;
+    ip = NULL;
 
-     cr_assert_eq(ip, (void*)TODO_NZ, "What is ip now? What would happen if we \
+    cr_assert_eq(ip, (void *)TODO_NZ, "What is ip now? What would happen if we \
         dereference ip?");
 }
 
-Test(about_malloc, calloc) {
+Test(about_malloc, calloc)
+{
     /*
      * The next function in the alloc family is calloc. Calloc does the same
      * operation as malloc, but it initialized the memory to 0, meaning that
@@ -97,7 +102,8 @@ Test(about_malloc, calloc) {
     cr_assert_eq(strlen(s), TODO, "What is the new length?");
 }
 
-Test(about_malloc, realloc) {
+Test(about_malloc, realloc)
+{
     /*
      * The final function in the family of alloc functions is realloc.
      *
@@ -109,15 +115,15 @@ Test(about_malloc, realloc) {
      */
 
     void *ip = malloc(sizeof(int));
-    *(int*)ip = 0xDEADBEEF;
+    *(int *)ip = 0xDEADBEEF;
 
     ip = realloc(ip, sizeof(long));
 
-    cr_assert_eq(*(unsigned long*)ip, TODO, "What bytes of ip were preserved \
+    cr_assert_eq(*(unsigned long *)ip, TODO, "What bytes of ip were preserved \
         when it is increased in size?");
 
     ip = realloc(ip, sizeof(short));
 
     /* Hint: our VMs are little endian */
-    cr_assert_eq(*(unsigned short*)ip, TODO, "What bytes were preserved now?");
+    cr_assert_eq(*(unsigned short *)ip, TODO, "What bytes were preserved now?");
 }

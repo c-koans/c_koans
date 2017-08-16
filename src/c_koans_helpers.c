@@ -3,11 +3,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-static int static_function(int);
+static int
+static_function(int);
 
 int global_var = 0;
 
-int string_compare(const void *s1, const void *s2) {
+int
+string_compare(const void *s1, const void *s2)
+{
     /*
      * The comparison function must match the declaration in the prototype
      * exactly. This is why, even though we are comparing 2 strings, the
@@ -21,15 +24,19 @@ int string_compare(const void *s1, const void *s2) {
     return strcmp(*(char **)s1, *(char **)s2);
 }
 
-void double_an_int(int *i) {
-	/* The '*' operator for dereference has a higher precedence than the other
-	 * arithmetic operators, therefore it will be muliplying and assigning the
-	 * int that is pointer to by i.
-	 */
-	*i *= 2;
+void
+double_an_int(int *i)
+{
+    /* The '*' operator for dereference has a higher precedence than the other
+     * arithmetic operators, therefore it will be muliplying and assigning the
+     * int that is pointer to by i.
+     */
+    *i *= 2;
 }
 
-int modify_global() {
+int
+modify_global()
+{
     /*
      * We modify the global variable, located in the .data section,
      * visible to the entire program.
@@ -38,7 +45,9 @@ int modify_global() {
     return global_var;
 }
 
-int modify_local() {
+int
+modify_local()
+{
     /*
      * We modify the local variable, located and initialzed on the stack.
      * every call, it will be initalized and modified in the same fashion.
@@ -48,14 +57,19 @@ int modify_local() {
     return i;
 }
 
-int modify_local_static() {
+int
+modify_local_static()
+{
     /*
      * Local static variables will be initialized only once and be located
      * in the .data section. Local static variables can only be referenced
      * inside the function because the name will be known inside the function.
-     * This causes the value of the variable to be preserved across function calls.
+     * This causes the value of the variable to be preserved across function
+     * calls.
      *
-     * The static qualifier has a double meaning depending on the scope it appears in;
+     * The static qualifier has a double meaning depending on the scope it
+     * appears
+     * in;
      * the next function will show this
      */
     static int i = 0;
@@ -71,15 +85,19 @@ int modify_local_static() {
  */
 static int static_int = 0;
 
-static int static_function(int n) {
+static int
+static_function(int n)
+{
     static_int++;
-    if(n == 0)
+    if (n == 0)
         return 0;
     else
-        return static_int + static_function(n-1);
+        return static_int + static_function(n - 1);
 }
 
-struct person make_person(const char *name, int month, int day, int year) {
+struct person
+make_person(const char *name, int month, int day, int year)
+{
     struct person ret;
 
     /* is this a problem? What is the lifetime of this heap allocated memory? */
@@ -94,8 +112,12 @@ struct person make_person(const char *name, int month, int day, int year) {
 }
 
 int
-make_person_better(struct person *person, const char *name, int month,
-    int day, int year) {
+make_person_better(struct person *person,
+    const char *name,
+    int month,
+    int day,
+    int year)
+{
 
     /*
      * The access operator for a pointer to a struct is different that usual
@@ -107,7 +129,8 @@ make_person_better(struct person *person, const char *name, int month,
     person->bday.year = year;
 
     /*
-     * Errno is a global variable that is set by library functions to indicate an
+     * Errno is a global variable that is set by library functions to indicate
+     * an
      * an error occured in that function. When we call calloc, an error might
      * occur, such as the machine being out of memory.
      */
@@ -117,7 +140,7 @@ make_person_better(struct person *person, const char *name, int month,
     person->name = calloc(strlen(name), sizeof(char));
 
     // We check if an error occured
-    if(errno)
+    if (errno)
         return EXIT_FAILURE;
 
     return EXIT_SUCCESS;
