@@ -23,7 +23,7 @@ struct linked_list {
 };
 
 
-Test(c_koans, linked_list_basics) {
+Test(about_linked_lists, linked_list_basics) {
   /* Here we declare two linked_list structs.
    * `head` has a pointer to `list_node`.
    */
@@ -45,7 +45,7 @@ Test(c_koans, linked_list_basics) {
 }
 
 
-Test(c_koans, traversing_linked_list) {
+Test(about_linked_lists, traversing_linked_list) {
   /* Here we declare 5 linked_list structs with nodes_i pointing to nodes_i-1 */
   struct linked_list nodes[5] = {
     { 1 },
@@ -59,7 +59,7 @@ Test(c_koans, traversing_linked_list) {
    * Use a temporary variable to iterate through the nodes.
    */
   struct linked_list *temp_head = &nodes[4];
-  
+
 
   /* Traversing a linked list using a while loop. */
   while (temp_head) {
@@ -97,10 +97,10 @@ struct linked_list *insert(struct linked_list *head, int val)
   if (temp)
     temp->next = new_node;
 
-  return new_node; 
+  return new_node;
 }
 
-Test(c_koans, insert_into_linked_list) {
+Test(about_linked_lists, insert_into_linked_list) {
   struct linked_list head = { 1 };
 
   /* It's nice to create functions to insert/delete from linked list.
@@ -134,7 +134,7 @@ struct linked_list *delete(struct linked_list *head, int val)
   return i;
 }
 
-Test(c_koans, delete_from_linked_list) {
+Test(about_linked_lists, delete_from_linked_list) {
   struct linked_list nodes[5] = {
     { 1, NULL },
     { 2, &nodes[0] },
@@ -142,7 +142,7 @@ Test(c_koans, delete_from_linked_list) {
     { 4, &nodes[2] },
     { 5, &nodes[3] }
   };
-  
+
   /* Do something with removed node .. */
   struct linked_list *deleted_node = delete(&nodes[4], 3);
 
@@ -152,7 +152,7 @@ Test(c_koans, delete_from_linked_list) {
 }
 
 
-Test(c_koans, helpful_pointers) {
+Test(about_linked_lists, helpful_pointers) {
   /* It is useful to define pointers to the start and end of a linked list. */
   struct list_node {
     int data;
@@ -184,7 +184,7 @@ Test(c_koans, helpful_pointers) {
 }
 
 
-Test(c_koans, doubly_linked_list) {
+Test(about_linked_lists, doubly_linked_list) {
   /* Doubly linked list is similar to a regular linked list except each node has a
    * pointer to the previous node in the list.
    *
