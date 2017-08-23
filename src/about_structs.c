@@ -9,8 +9,7 @@
  */
 
 /* Here is a simple struct to represent a point, with an x and y coordinate. */
-struct point2d
-{
+struct point2d {
     int x;
     int y;
 }; // note this semi-colon
@@ -27,15 +26,17 @@ Test(about_structs, struct_basics)
 
     cr_assert_eq(p1.x, TODO, "What has the x value been initialized to?");
 
-    /* The sizeof operator will operate as expected, even with a struct */
-    /* Since we are using sizeof on p1, we do not have to enclose it in
-     * parenthesis */
+    /* The sizeof operator will operate as expected, even with a struct
+     * Since we are using sizeof on p1, we do not have to enclose it in
+     * parenthesis
+     */
     cr_assert_eq(sizeof p1, TODO, "What is the size of our two ints?");
 
     /* We can initialze our structs statically, with similar syntax to array
-     * initialization */
-    /* The members are initialized in the order that they have been declared in
-     * the struct */
+     * initialization
+     * The members are initialized in the order that they have been declared in
+     * the struct
+     */
     struct point2d p2 = { 10, 20 };
 
     cr_assert_eq(p2.y, TODO, "What has the y value been initialized to?");
@@ -49,8 +50,7 @@ Test(about_structs, struct_basics)
      * closing '}'
      * This is equivalent to doing 'int x;'
      */
-    struct point3d
-    {
+    struct point3d {
         struct point2d two_d;
         int z;
     } p3;
@@ -64,8 +64,7 @@ Test(about_structs, struct_basics)
     /* You can use 'typedef' to declare a struct type that can be used without
      * having to use 'struct'
      */
-    typedef struct
-    {
+    typedef struct {
         struct point3d three_d;
         int w;
     } point4d;
@@ -74,15 +73,15 @@ Test(about_structs, struct_basics)
     p4.three_d.z = 2;
     p4.three_d.two_d.x = 1;
 
-    cr_assert_eq(p4.three_d.two_d.x,
-        TODO,
+    cr_assert_eq(p4.three_d.two_d.x, TODO,
         "What is the value of x, after all the struct access?");
 }
 
 Test(about_structs, structs_and_functions_and_pointers)
 {
     /* A struct can be passed as a variable to a function, just like any other
-     * type */
+     * type
+     */
     struct person person1;
 
     /* Examine this function in c_koans_helpers.c */
@@ -102,8 +101,7 @@ Test(about_structs, structs_and_functions_and_pointers)
     /* Examine this function in c_koans_helpers.c */
     int success = make_person_better(&person2, "Bob", 10, 23, 1994);
 
-    cr_assert_eq(success,
-        TODO_NZ,
+    cr_assert_eq(success, TODO_NZ,
         "If the operation succeeded, what is the return value?");
     cr_assert_eq(
         person2.bday.month, TODO, "What is the month for this person?");
@@ -116,8 +114,7 @@ Test(about_structs, arrays_of_structs)
      * it accounts for the size of the struct.
      */
 
-    struct s1
-    {
+    struct s1 {
         int i;
         int j;
     };
@@ -136,8 +133,7 @@ Test(about_structs, arrays_of_structs)
      * memory, it will pad 3 extra bytes after the char c.
      */
 
-    struct s2
-    {
+    struct s2 {
         int i;
         char c;
     };
@@ -151,8 +147,7 @@ Test(about_structs, arrays_of_structs)
      * The __attribute__((packed)) at the end of the definition will allow
      * cause the struct to be 'packed'.
      */
-    struct s3
-    {
+    struct s3 {
         int i;
         char c;
     } __attribute__((packed));
@@ -168,8 +163,7 @@ Test(about_structs, self_referential_structs)
      * same struct that it is as members of the struct.
      */
 
-    struct s1
-    {
+    struct s1 {
         int i;
         int j;
         struct s1 *s;

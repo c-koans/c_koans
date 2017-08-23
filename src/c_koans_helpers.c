@@ -3,13 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-static int
-static_function(int);
+static int static_function(int);
 
 int global_var = 0;
 
-int
-string_compare(const void *s1, const void *s2)
+int string_compare(const void *s1, const void *s2)
 {
     /*
      * The comparison function must match the declaration in the prototype
@@ -24,8 +22,7 @@ string_compare(const void *s1, const void *s2)
     return strcmp(*(char **)s1, *(char **)s2);
 }
 
-void
-double_an_int(int *i)
+void double_an_int(int *i)
 {
     /* The '*' operator for dereference has a higher precedence than the other
      * arithmetic operators, therefore it will be muliplying and assigning the
@@ -34,8 +31,7 @@ double_an_int(int *i)
     *i *= 2;
 }
 
-int
-modify_global()
+int modify_global()
 {
     /*
      * We modify the global variable, located in the .data section,
@@ -45,8 +41,7 @@ modify_global()
     return global_var;
 }
 
-int
-modify_local()
+int modify_local()
 {
     /*
      * We modify the local variable, located and initialzed on the stack.
@@ -57,8 +52,7 @@ modify_local()
     return i;
 }
 
-int
-modify_local_static()
+int modify_local_static()
 {
     /*
      * Local static variables will be initialized only once and be located
@@ -85,8 +79,7 @@ modify_local_static()
  */
 static int static_int = 0;
 
-static int
-static_function(int n)
+static int static_function(int n)
 {
     static_int++;
     if (n == 0)
@@ -95,8 +88,7 @@ static_function(int n)
         return static_int + static_function(n - 1);
 }
 
-struct person
-make_person(const char *name, int month, int day, int year)
+struct person make_person(const char *name, int month, int day, int year)
 {
     struct person ret;
 
@@ -111,12 +103,8 @@ make_person(const char *name, int month, int day, int year)
     return ret;
 }
 
-int
-make_person_better(struct person *person,
-    const char *name,
-    int month,
-    int day,
-    int year)
+int make_person_better(
+    struct person *person, const char *name, int month, int day, int year)
 {
 
     /*

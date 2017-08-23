@@ -16,8 +16,7 @@
  * Each list node holds a integer value and a pointer to the next node
  * in the list.
  */
-struct linked_list
-{
+struct linked_list {
     int data;
     struct linked_list *next;
 };
@@ -48,11 +47,8 @@ Test(about_linked_lists, traversing_linked_list)
 {
     /* Here we declare 5 linked_list structs with nodes_i pointing to nodes_i-1
      */
-    struct linked_list nodes[5] = { { 1 },
-        { 2, &nodes[0] },
-        { 3, &nodes[1] },
-        { 4, &nodes[2] },
-        { 5, &nodes[3] } };
+    struct linked_list nodes[5] = { { 1 }, { 2, &nodes[0] }, { 3, &nodes[1] },
+        { 4, &nodes[2] }, { 5, &nodes[3] } };
 
     /* You typically want to keep reference of where the head of your list is.
      * Use a temporary variable to iterate through the nodes.
@@ -79,8 +75,7 @@ Test(about_linked_lists, traversing_linked_list)
  * of the list. This makes insertion efficient, but at the cost
  * of element ordering.
  */
-struct linked_list *
-insert(struct linked_list *head, int val)
+struct linked_list *insert(struct linked_list *head, int val)
 {
     struct linked_list *new_node, *temp;
 
@@ -134,11 +129,8 @@ struct linked_list *delete (struct linked_list *head, int val)
 
 Test(about_linked_lists, delete_from_linked_list)
 {
-    struct linked_list nodes[5] = { { 1, NULL },
-        { 2, &nodes[0] },
-        { 3, &nodes[1] },
-        { 4, &nodes[2] },
-        { 5, &nodes[3] } };
+    struct linked_list nodes[5] = { { 1, NULL }, { 2, &nodes[0] },
+        { 3, &nodes[1] }, { 4, &nodes[2] }, { 5, &nodes[3] } };
 
     /* Do something with removed node .. */
     struct linked_list *deleted_node = delete (&nodes[4], 3);
@@ -152,14 +144,12 @@ Test(about_linked_lists, delete_from_linked_list)
 Test(about_linked_lists, helpful_pointers)
 {
     /* It is useful to define pointers to the start and end of a linked list. */
-    struct list_node
-    {
+    struct list_node {
         int data;
         struct list_node *next;
     };
 
-    struct _linked_list
-    {
+    struct _linked_list {
         struct list_node *head;
         struct list_node *tail;
     };
@@ -167,11 +157,8 @@ Test(about_linked_lists, helpful_pointers)
     cr_assert_eq(
         sizeof(struct _linked_list), TODO, "How much memory does it occupy?");
 
-    struct list_node nodes[5] = { { 5, NULL },
-        { 4, &nodes[0] },
-        { 3, &nodes[1] },
-        { 2, &nodes[2] },
-        { 1, &nodes[3] } };
+    struct list_node nodes[5] = { { 5, NULL }, { 4, &nodes[0] },
+        { 3, &nodes[1] }, { 2, &nodes[2] }, { 1, &nodes[3] } };
 
     struct _linked_list list = { &nodes[4], &nodes[0] };
 
@@ -195,15 +182,13 @@ Test(about_linked_lists, doubly_linked_list)
      * pointers
      * of the node to be deleted.
      */
-    struct dbl_linked_list
-    {
+    struct dbl_linked_list {
         int data;
         struct dbl_linked_list *next;
         struct dbl_linked_list *prev;
     };
 
-    cr_assert_eq(sizeof(struct dbl_linked_list),
-        TODO,
+    cr_assert_eq(sizeof(struct dbl_linked_list), TODO,
         "How much memory does it occupy?");
 
     struct dbl_linked_list n1 = { 1 }, n2 = { 2 }, n3 = { 3 };

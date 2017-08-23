@@ -3,8 +3,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-int *
-malloc_func()
+int *malloc_func()
 {
     int *return_ptr = malloc(sizeof(int));
     *return_ptr = 15;

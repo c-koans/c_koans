@@ -48,11 +48,9 @@ Test(about_basics, variables)
      * terms of syntax
      */
     char c = TODO;
-    cr_assert_eq(c,
-        'C',
-        "All characters in C are interpreted from the ascii "
-        "table, go to your terminal and enter 'man ascii' to "
-        "find this solution");
+    cr_assert_eq(c, 'C', "All characters in C are interpreted from the ascii "
+                         "table, go to your terminal and enter 'man ascii' to "
+                         "find this solution");
 
     short s = TODO;
     cr_assert_eq(s, 0xBEE, "A short is 2 bytes");
@@ -61,41 +59,32 @@ Test(about_basics, variables)
     cr_assert_eq(i, 0xBADBEEF, "A int is 4 bytes");
 
     long l = TODO;
-    cr_assert_eq(l,
-        0xDEBA7AB1E,
+    cr_assert_eq(l, 0xDEBA7AB1E,
         "A long is a larger integer type than int (supports unsigned).");
 
     unsigned int ui = TODO;
     /* This unsigned int should exceed the maximum capacity of an INT (hint
-     * INT_MAX is declared in limits.h) */
-    cr_assert_gt(ui,
-        0xDEADBEEF,
-        "The unsigned modifier can be used on a "
-        "primitive data type to increase the upper "
-        "limit by only storing positive values");
+     * INT_MAX is declared in limits.h)
+     */
+    cr_assert_gt(ui, 0xDEADBEEF, "The unsigned modifier can be used on a "
+                                 "primitive data type to increase the upper "
+                                 "limit by only storing positive values");
 
     long long ll = TODO;
 
-    cr_expect_eq(ll,
-        0xFF,
+    cr_expect_eq(ll, 0xFF,
         "A number literal starting with 0x will be interpreted as hexadecimal");
-    cr_expect_eq(ll,
-        0b11111111,
+    cr_expect_eq(ll, 0b11111111,
         "A number literal starting with 0b will be interpreted as binary");
-    cr_assert_eq(ll,
-        0777,
+    cr_assert_eq(ll, 0777,
         "A number literal starting with 0 will be interpreted as octal");
 
     double d = 3.20;
-    cr_assert_float_eq(d,
-        (16 / 5),
-        0.000001,
+    cr_assert_float_eq(d, (16 / 5), 0.000001,
         "Just like in Java division is by default done as integer division");
 
     double d2 = 320e-2;
-    cr_assert_float_eq(d2,
-        3 + (1 / 5),
-        0.000001,
+    cr_assert_float_eq(d2, 3 + (1 / 5), 0.000001,
         "Addition also effects whether a number literal is "
         "interpreted as IEEE or 2's Comp");
 }

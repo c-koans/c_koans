@@ -21,8 +21,7 @@ Test(about_pointers, pointers_and_addresses)
 
     cr_assert_eq(
         sizeof(i), TODO, "What is the size of an int on a 64 bit machine?");
-    cr_assert_eq(sizeof(iptr),
-        TODO,
+    cr_assert_eq(sizeof(iptr), TODO,
         "What is the size of an address on a 64 bit machine?");
 
     /* The '*' operator has another meaning when used not in a declaration to
@@ -87,21 +86,18 @@ Test(about_pointers, pointers_arrays_and_arithmetic)
 
     cr_assert_eq(*(p1 + 1), TODO, "What is the value at this address?");
 
-    cr_assert_eq(p1[1],
-        TODO,
+    cr_assert_eq(p1[1], TODO,
         "Bracket notation is just syntactic sugar for pointer arithmetic.");
 
     /*
      * Think about this example, if p1 points to the first int and p2 points to
      * the second int, what is the number of bytes between the two addresses?
      */
-    cr_assert_eq((long)((long)p2 - (long)p1),
-        TODO,
+    cr_assert_eq((long)((long)p2 - (long)p1), TODO,
         "What is the number of bytes diffence?");
 
-    cr_assert_eq((int)(p2 - p1),
-        TODO,
-        "What is the number of ints difference?");
+    cr_assert_eq(
+        (int)(p2 - p1), TODO, "What is the number of ints difference?");
 }
 
 Test(about_pointers, function_pointers)

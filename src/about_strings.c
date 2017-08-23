@@ -119,8 +119,7 @@ Test(about_strings, copy)
         string");
 }
 
-void
-test_a_string_length_with_sizeof(char *string)
+void test_a_string_length_with_sizeof(char *string)
 {
     /* Sizeof(string) is 8 becuase the size of pointer is 8 */
     cr_assert_eq(7, sizeof(string), "That same string gives a different size \

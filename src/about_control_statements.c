@@ -51,13 +51,13 @@ Test(about_control_statements, switch_block)
      */
     int var = 1;
     switch (var) {
-        case 1:
-            var = 100;
-        case 10:
-            var = 200;
-            break;
-        default:
-            break;
+    case 1:
+        var = 100;
+    case 10:
+        var = 200;
+        break;
+    default:
+        break;
     }
 
     cr_assert_eq(var, TODO, "Determine the control flow for this block.");

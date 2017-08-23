@@ -153,7 +153,6 @@ Test(about_preprocessor, variadic_macros)
      * Note that the macro takes advantage of stringizing. Your argument is not
      * going to be a string.
      */
-    cr_assert_eq("varable,args,with,commas",
-        VARIADIC_ARGUMENTS(TODO),
+    cr_assert_eq("varable,args,with,commas", VARIADIC_ARGUMENTS(TODO),
         "Variadic macros not yet completed");
 }
