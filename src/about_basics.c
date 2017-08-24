@@ -48,7 +48,7 @@ Test(about_basics, variables)
      * terms of syntax
      */
     char c = TODO;
-    cr_assert_eq(c, 'C', "All characters in C are interpreted from the ascii "
+    cr_assert_eq(c, 'C', "All characters in C are interpreted from the ASCII "
                          "table, go to your terminal and enter 'man ascii' to "
                          "find this solution");
 
@@ -79,12 +79,12 @@ Test(about_basics, variables)
     cr_assert_eq(ll, 0777,
         "A number literal starting with 0 will be interpreted as octal");
 
-    double d = 3.20;
-    cr_assert_float_eq(d, (16 / 5), 0.000001,
-        "Just like in Java division is by default done as integer division");
+    double d = 3.50;
+    cr_assert_float_eq(d, (7 / 2), 0.000001,
+        "Just like Java, C does integer division for 7/2");
 
-    double d2 = 320e-2;
-    cr_assert_float_eq(d2, 3 + (1 / 5), 0.000001,
+    double d2 = 350e-2;
+    cr_assert_float_eq(d2, 3 + (1 / 2), 0.000001,
         "Addition also effects whether a number literal is "
         "interpreted as IEEE or 2's Comp");
 }
