@@ -21,7 +21,7 @@ Test(about_dataclasses, unions)
         char c;
     } u; // Here we initialize a union variable, just like a struct.
 
-    u.d = 3.20;
+    u.d = 1.01;
 
     cr_assert_eq(u.d, TODO, "What is the value of d that we assigned?");
     cr_assert_eq(sizeof u, TODO, "What is the size of the largest data type in "
@@ -106,7 +106,7 @@ Test(about_dataclasses, bit_fields)
         unsigned int n : 10;
     } cnum;
 
-    cnum.n = 320;
+    cnum.n = 101;
 
     /* The size of a bit field is represented by the type that it assigned to.
      * In this case, this is an int, which is 32 bits long. Prior to C99, the
@@ -122,13 +122,13 @@ Test(about_dataclasses, bit_fields)
         unsigned int is_offered : 1;
     };
 
-    struct course cse320 = { 320, 'E', 'S', 'C', 1 };
+    struct course cse101 = {101, 'E', 'S', 'C', 1};
 
-    cr_assert_eq(*(unsigned int *)(&cse320), TODO,
+    cr_assert_eq(*(unsigned int *)(&cse101), TODO,
         "Determine the hex value of "
-        "the bit vector for cse320!");
+        "the bit vector for cse101!");
 
-    cr_assert_eq(sizeof cse320, TODO, "What is the size of our variable?");
+    cr_assert_eq(sizeof cse101, TODO, "What is the size of our variable?");
 
     /* In more modern C (C99+), bit fields may be of any type, and the size of
      * the resultant struct will be based on the type used for the field(s).
