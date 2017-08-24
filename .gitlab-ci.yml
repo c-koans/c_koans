@@ -1,0 +1,20 @@
+image: gcc:5.4.0
+variables:
+    GIT_SSL_NO_VERIFY: "true"
+    EXEC: c_koans
+    CRITERIONLINK: https://github.com/Snaipe/Criterion/releases/download/v2.3.2/criterion-v2.3.2-linux-x86_64.tar.bz2
+before_script:
+    - apt-get update &>/dev/null
+    - apt-get install -y curl make gcc bzip2 &>/dev/null
+    - mkdir -p /usr/include/criterion /usr/lib
+    - curl -sLo /tmp/criterion.tar.bz2 $CRITERIONLINK
+    - tar -xjf /tmp/criterion.tar.bz2 -C /tmp
+    - cp -r /tmp/criterion-v2.3.2/include/criterion /usr/include
+    - cp /tmp/criterion-v2.3.2/lib/* /usr/lib
+    - make clean all
+stages:
+    - run
+run:
+    stage: run
+    script:
+        - bin/${EXEC} -S --always-succeed --verbose=0 --timeout 5

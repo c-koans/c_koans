@@ -1,0 +1,23 @@
+---
+BasedOnStyle:  WebKit
+Language:        Cpp
+AlignAfterOpenBracket: DontAlign
+# AlignEscapedNewlines: Right
+BraceWrapping:
+  AfterEnum:       false
+  AfterStruct:     false
+  AfterUnion:      false
+  BeforeElse:      true
+BreakBeforeTernaryOperators: true
+BreakStringLiterals: true
+ColumnLimit:     80
+CommentPragmas:  '^ IWYU pragma:'
+ContinuationIndentWidth: 4
+DerivePointerAlignment: false
+DisableFormat:   false
+IndentWidth:     4
+PointerAlignment: Right
+Standard:        Cpp11
+TabWidth:        4
+...
+
