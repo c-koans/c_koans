@@ -135,7 +135,7 @@ Test(about_linked_lists, delete_from_linked_list)
     /* Do something with removed node .. */
     struct linked_list *deleted_node = delete (&nodes[4], 3);
 
-    cr_assert_eq(deleted_node->next, "What was the deleted node pointing to?");
+    cr_assert_eq(deleted_node->next, TODO, "What was the deleted node pointing to?");
     cr_assert_eq(nodes[3].next, TODO, "What is the next node after nodes[3]?");
     cr_assert_eq(
         nodes[3].next->data, TODO, "What data is contained in that node?");
