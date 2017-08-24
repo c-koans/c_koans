@@ -30,7 +30,8 @@ Test(about_strings, what_is_string)
 Test(about_strings, reference_characters)
 {
     /*
-     * A String is just like an array of chars. All ways of dereferencing arrays will
+     * A String is just like an array of chars. All ways of dereferencing arrays
+     * will
      * work with strings
      */
     char *string = "CSE101 is awesome";
@@ -131,7 +132,8 @@ void test_a_string_length_with_sizeof(char *string)
 Test(about_strings, function_paramater)
 {
     /*
-     * sizeof can give different results when strings are passed in as parameters,
+     * sizeof can give different results when strings are passed in as
+     * parameters,
      * but strlen will always give the length of the string.
      */
     char string[] = { 'C', 'S', 'E', '\0' };

@@ -26,6 +26,6 @@ int modify_global();
 int modify_local();
 int modify_local_static();
 
-struct person make_person(const char*,int,int,int);
-int make_person_better(struct person*,const char*,int,int,int);
+struct person make_person(const char *, int, int, int);
+int make_person_better(struct person *, const char *, int, int, int);
 #endif

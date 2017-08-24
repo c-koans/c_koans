@@ -32,3 +32,17 @@ Inside `src/` you will find a file for each of the following topics in C:
 - I/O: Open (read, write, append), Read, Write, Close, Dup2
 - Malloc: Dynamic memory allocation vs Stack, calloc, realloc, free
 - Linked List Project: This one will be left for you to implement we have given all the unit tests for it, its a small culminating project that uses all you've learned from these tests.
+
+The recommended order for fixing the tests is:
+- about_basics.c
+- about_control_statements.c
+- about_functions.c
+- about_pointers.c
+- about_malloc.c
+- about_arrays.c
+- about_strings.c
+- about_structs.c
+- about_dataclasses.c
+- about_io.c
+- about_linked_lists.c
+- about_preprocessor.c

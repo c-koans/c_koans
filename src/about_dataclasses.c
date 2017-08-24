@@ -122,7 +122,7 @@ Test(about_dataclasses, bit_fields)
         unsigned int is_offered : 1;
     };
 
-    struct course cse101 = {101, 'E', 'S', 'C', 1};
+    struct course cse101 = { 101, 'E', 'S', 'C', 1 };
 
     cr_assert_eq(*(unsigned int *)(&cse101), TODO,
         "Determine the hex value of "

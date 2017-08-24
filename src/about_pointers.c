@@ -36,6 +36,7 @@ Test(about_pointers, pointers_and_addresses)
      * '*'.
      */
 
+    // DON'T DELETE THE CLANG-FORMAT LINES
     // clang-format off
     int k, *l;
     int* m, n;
