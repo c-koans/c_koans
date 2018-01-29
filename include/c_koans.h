@@ -4,6 +4,7 @@
 #define TODO 0
 #define TODO_NZ 1
 #define TODO_S ""
+#define TODO_FP (FILE*)!NULL
 
 typedef struct {
     int month;
