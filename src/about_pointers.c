@@ -1,5 +1,4 @@
 #include "c_koans.h"
-#include <criterion/criterion.h>
 #include <string.h>
 
 Test(about_pointers, pointers_and_addresses)

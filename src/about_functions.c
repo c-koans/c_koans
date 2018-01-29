@@ -1,5 +1,4 @@
 #include "c_koans.h"
-#include <criterion/criterion.h>
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>

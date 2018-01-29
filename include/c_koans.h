@@ -1,3 +1,6 @@
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+
 #ifndef CKOANS_H
 #define CKOANS_H
 

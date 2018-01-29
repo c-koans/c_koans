@@ -1,5 +1,4 @@
 #include "c_koans.h"
-#include <criterion/criterion.h>
 
 Test(about_dataclasses, unions)
 {

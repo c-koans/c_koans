@@ -1,5 +1,5 @@
 #include "c_koans.h"
-#include <criterion/criterion.h>
+#include <stdlib.h>
 
 void func(int *array)
 {
