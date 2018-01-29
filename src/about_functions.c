@@ -19,10 +19,10 @@ int fib(int n)
 Test(about_functions, function_basics)
 {
     /*
-     * Functions are pieces of modularized code. They are equivalent in purpose
-     * to methods in Java. Since there are no Classes in C, C functions can be
-     * thought of as static methods in Java.
-     */
+        Functions are pieces of modularized code. They are equivalent in purpose
+        to methods in Java. Since there are no Classes in C, C functions can be
+        thought of as static methods in Java.
+    */
     cr_assert_eq(return_5(), TODO, "What does this function return?");
 
     /* Of course, functions can be recursive */
@@ -30,16 +30,16 @@ Test(about_functions, function_basics)
 }
 
 /*
- * This is a function prototype: A blueprint of a function that will be
- * implemented later. This is how functions can be used and called without
- * them being implemented in the order in which they are called.
- *
- * Typically, function prototypes are in header files ('.h'), and these are
- * #include'd in files that use the functions that are declared.
- *
- * Function prototypes do not need to have a name for arguments: only the type.
- * They may be included for more clarity of code, but it is up the discretion
- * of the programmer.
+    This is a function prototype: A blueprint of a function that will be
+    implemented later. This is how functions can be used and called without
+    them being implemented in the order in which they are called.
+
+    Typically, function prototypes are in header files ('.h'), and these are
+    #include'd in files that use the functions that are declared.
+
+    Function prototypes do not need to have a name for arguments: only the type.
+    They may be included for more clarity of code, but it is up the discretion
+    of the programmer.
  */
 int function_prototype(int, int);
 
@@ -56,13 +56,13 @@ int function_prototype(int i, int j) { return i + j; }
 Test(about_functions, function_scope_and_vars)
 {
     /*
-     * Functions are the main scope of the C language. The location of variables
-     * are determined by their declaration location in reference to the
-     * functions.
-     *
-     * We will examine three types of variables: global, local and local static
-     * through three functions found inside c_koans_helpers.c
-     */
+        Functions are the main scope of the C language. The location of
+        variables are determined by their declaration location in reference to
+        the functions.
+
+        We will examine three types of variables: global, local and local static
+        through three functions found inside c_koans_helpers.c
+    */
 
     modify_global();
     modify_global();

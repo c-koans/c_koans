@@ -2,19 +2,20 @@
 #include <criterion/criterion.h>
 #include <stdlib.h>
 
-/* Linked list is a collection of elements, typically represented
- * through a node referencing another node by means of a pointer.
- * This data structure allows for efficient insertion/removal of
- * elements from any node in the list.
- *
- * Unlike an array where elements are sequential, elements of a
- * linked list may not be next to each other in memory.
+/*
+    Linked list is a collection of elements, typically represented
+    through a node referencing another node by means of a pointer.
+    This data structure allows for efficient insertion/removal of
+    elements from any node in the list.
+
+    Unlike an array where elements are sequential, elements of a
+    linked list may not be next to each other in memory.
  */
 
-/* Simplest form of a linked list structure.
- *
- * Each list node holds a integer value and a pointer to the next node
- * in the list.
+/*
+    Simplest form of a linked list structure.
+    Each list node holds a integer value and a pointer to the next node
+    in the list.
  */
 struct linked_list {
     int data;
@@ -23,9 +24,10 @@ struct linked_list {
 
 Test(about_linked_lists, linked_list_basics)
 {
-    /* Here we declare two linked_list structs.
-     * `head` has a pointer to `list_node`.
-     */
+    /*
+        Here we declare two linked_list structs.
+        `head` has a pointer to `list_node`.
+    */
     struct linked_list head = { 10 };
     struct linked_list list_node = { 12 };
 
@@ -34,25 +36,28 @@ Test(about_linked_lists, linked_list_basics)
     cr_assert_eq(head.next, TODO, "What is the `next` value of head?");
     cr_assert_eq(head.next->data, TODO, "What `data` does it hold?");
 
-    /* Remember that when using the sizeof operator on a array type, it will
-     * return the sum of all the memory the array uses.
-     *
-     * How much memory does each `struct linked_list` node take up? What are
-     * the pros/cons of this memory usage compared to arrays?
-     */
+    /*
+        Remember that when using the sizeof operator on a array type, it will
+        return the sum of all the memory the array uses.
+
+        How much memory does each `struct linked_list` node take up? What are
+        the pros/cons of this memory usage compared to arrays?
+    */
     cr_assert_eq(sizeof(head), TODO, "How much memory does `head` occupy?");
 }
 
 Test(about_linked_lists, traversing_linked_list)
 {
-    /* Here we declare 5 linked_list structs with nodes_i pointing to nodes_i-1
-     */
+    /*
+        Here we declare 5 linked_list structs with nodes_i pointing to nodes_i-1
+    */
     struct linked_list nodes[5] = { { 1 }, { 2, &nodes[0] }, { 3, &nodes[1] },
         { 4, &nodes[2] }, { 5, &nodes[3] } };
 
-    /* You typically want to keep reference of where the head of your list is.
-     * Use a temporary variable to iterate through the nodes.
-     */
+    /*
+        You typically want to keep reference of where the head of your list is.
+        Use a temporary variable to iterate through the nodes.
+    */
     struct linked_list *temp_head = &nodes[4];
 
     /* Traversing a linked list using a while loop. */
@@ -70,11 +75,12 @@ Test(about_linked_lists, traversing_linked_list)
     cr_assert_eq(nodes[3].next->data, TODO, "What is the data contained?");
 }
 
-/* An example of how one might append a node to a linked list.
- * Some linked list implementations set the new node as the head
- * of the list. This makes insertion efficient, but at the cost
- * of element ordering.
- */
+/*
+    An example of how one might append a node to a linked list.
+    Some linked list implementations set the new node as the head
+    of the list. This makes insertion efficient, but at the cost
+    of element ordering.
+*/
 struct linked_list *insert(struct linked_list *head, int val)
 {
     struct linked_list *new_node, *temp;
@@ -96,9 +102,10 @@ Test(about_linked_lists, insert_into_linked_list)
 {
     struct linked_list head = { 1 };
 
-    /* It's nice to create functions to insert/delete from linked list.
-     * Make sure to keep track of allocated memory.
-     */
+    /*
+        It's nice to create functions to insert/delete from linked list.
+        Make sure to keep track of allocated memory.
+    */
     struct linked_list *new_node = insert(&head, 2);
 
     cr_assert_eq(new_node->next, TODO, "What is the new node pointing to?");
@@ -107,9 +114,10 @@ Test(about_linked_lists, insert_into_linked_list)
         head.next->data, TODO, "What data is stored in the node after `head`?");
 }
 
-/* Contrived example of a deletion from a linked list.
- * Return the node to delete.
- */
+/*
+    Contrived example of a deletion from a linked list.
+    Return the node to delete.
+*/
 struct linked_list *delete (struct linked_list *head, int val)
 {
     struct linked_list *prev, *i;
@@ -135,7 +143,8 @@ Test(about_linked_lists, delete_from_linked_list)
     /* Do something with removed node .. */
     struct linked_list *deleted_node = delete (&nodes[4], 3);
 
-    cr_assert_eq(deleted_node->next, TODO, "What was the deleted node pointing to?");
+    cr_assert_eq(
+        deleted_node->next, TODO, "What was the deleted node pointing to?");
     cr_assert_eq(nodes[3].next, TODO, "What is the next node after nodes[3]?");
     cr_assert_eq(
         nodes[3].next->data, TODO, "What data is contained in that node?");
@@ -173,15 +182,12 @@ Test(about_linked_lists, helpful_pointers)
 
 Test(about_linked_lists, doubly_linked_list)
 {
-    /* Doubly linked list is similar to a regular linked list except each node
-     * has
-     * a
-     * pointer to the previous node in the list.
-     *
-     * We can reduce deletion time because we can easily modify the prev/next
-     * pointers
-     * of the node to be deleted.
-     */
+    /*
+        Doubly linked list is similar to a regular linked list except each node
+        has a pointer to the previous node in the list.
+        We can reduce deletion time because we can easily modify the prev/next
+        pointers of the node to be deleted.
+    */
     struct dbl_linked_list {
         int data;
         struct dbl_linked_list *next;
