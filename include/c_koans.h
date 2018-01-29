@@ -1,9 +1,13 @@
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+
 #ifndef CKOANS_H
 #define CKOANS_H
 
 #define TODO 0
 #define TODO_NZ 1
 #define TODO_S ""
+#define TODO_FP (FILE*)!NULL
 
 typedef struct {
     int month;

@@ -14,6 +14,8 @@ The test are written in the [Criterion](https://github.com/Snaipe/Criterion) uni
 
 1. Install [Criterion](https://github.com/Snaipe/Criterion)
 2. run `make clean all`
+2a. Install `make`: for `apt` based systems like Debian or Ubuntu, use `sudo apt-get install make`
+2b. Install `gcc`: `sudo apt-get install gcc`
 3. run `bin/c_koans`
 4. Start fixing!
 
@@ -21,17 +23,18 @@ The test are written in the [Criterion](https://github.com/Snaipe/Criterion) uni
 
 Inside `src/` you will find a file for each of the following topics in C:
 
-- Basics: variables, assignment, addresses, intro pointers
-- Pointers: arithmetic, pass by reference/value, address of, NULL
-- Functions: function pointers, prototypes
-- Arrays & Strings: label + offset vs pointer + offset, sizeof and its pitfalls
-- Preprocessor: defines, conditional defines, code pitfalls (semicolon in define, use in for loop)
-- Control Statements: If, While, For, Switch, Do While, Goto, Break, (pitfalls: If only takes next line if no {})
-- Structs: more sizeof, typedef, pointer dereference, access `->` vs `.`, (One test with Union)
-- Dataclasses (There's a better name for this): Enum, Extern, Static (Make a function that persists data in static var), Void
-- I/O: Open (read, write, append), Read, Write, Close, Dup2
-- Malloc: Dynamic memory allocation vs Stack, calloc, realloc, free
-- Linked List Project: This one will be left for you to implement we have given all the unit tests for it, its a small culminating project that uses all you've learned from these tests.
+- Basics
+- Pointers
+- Functions
+- Arrays
+- Strings
+- The Preprocessor
+- Control Statements
+- Structs
+- Dataclasses
+- I/O
+- Malloc
+- Linked List Project
 
 The recommended order for fixing the tests is:
 - about_basics.c
@@ -43,6 +46,7 @@ The recommended order for fixing the tests is:
 - about_strings.c
 - about_structs.c
 - about_dataclasses.c
+- about_printing.c
 - about_io.c
 - about_linked_lists.c
 - about_preprocessor.c
