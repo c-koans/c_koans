@@ -10,14 +10,17 @@ The test are written in the [Criterion](https://github.com/Snaipe/Criterion) uni
 
 ## How to run
 
-### On Linux:
+### On Linux/OSX:
 
 1. Install [Criterion](https://github.com/Snaipe/Criterion)
 2. run `make clean all`
-2a. Install `make`: for `apt` based systems like Debian or Ubuntu, use `sudo apt-get install make`
-2b. Install `gcc`: `sudo apt-get install gcc`
 3. run `bin/c_koans`
 4. Start fixing!
+
+### On Windows:
+
+1. Get a Linux command line ([Cygwin](http://www.cygwin.com/), [Windows Linux Subsystem](https://docs.microsoft.com/en-us/windows/wsl/install-win10), or whichever you prefer)
+2. Follow the Linux/OSX instructions!
 
 ## Sections
 
