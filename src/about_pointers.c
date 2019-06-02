@@ -94,7 +94,7 @@ Test(about_pointers, pointers_arrays_and_arithmetic)
      * the second int, what is the number of bytes between the two addresses?
     */
     cr_assert_eq((long)((long)p2 - (long)p1), TODO,
-        "What is the number of bytes diffence?");
+        "What is the number of bytes difference?");
 
     cr_assert_eq(
         (int)(p2 - p1), TODO, "What is the number of ints difference?");

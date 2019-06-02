@@ -9,7 +9,7 @@
 Test(about_control_statements, ifs)
 {
     /*
-        The if statent is the most familiar: the statement inside of the
+        The if statement is the most familiar: the statement inside of the
         parenthesis is evaluated.
         The only difference from Java is the lack of a boolean type.
         Due to this, the conditional is evaluated for a nonzero or zero value.
@@ -67,7 +67,7 @@ Test(about_control_statements, loops)
         C possesses three types of loops. The first of which is the 'while'
         The while loop will execute everything inside of its block until the
         condition it checks is 'false', meaning that until it is 0.
-        The while loop will not execute once if its condition is initally 0.
+        The while loop will not execute once if its condition is initially 0.
 
         This brings another discussion for the 'break' statement: if the control
         flow reaches that statement inside of a loop,
@@ -85,7 +85,7 @@ Test(about_control_statements, loops)
         var, TODO, "Determine the result of the execution of this loop.");
 
     /*
-        The for loop should also feel familar.
+        The for loop should also feel familiar.
         It possess three statements inside of its parenthesis:
         the first is done before the first iteration, the second is the check to
         stop iteration, and
