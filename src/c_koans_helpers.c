@@ -45,8 +45,8 @@ int modify_global()
 int modify_local()
 {
     /*
-        We modify the local variable, located and initialzed on the stack.
-        every call, it will be initalized and modified in the same fashion.
+        We modify the local variable, located and initialized on the stack.
+        every call, it will be initialized and modified in the same fashion.
     */
     int i = 0;
     i++;
@@ -134,7 +134,7 @@ int make_person_better(
 
     return EXIT_SUCCESS;
     /*
-        EXIT_SUCCESS and EXIT_FAILURE are pre defined macros for typical success
+        EXIT_SUCCESS and EXIT_FAILURE are predefined macros for typical success
         or failure. On our VM they are 0 and 1 respectively.
     */
 }

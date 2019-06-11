@@ -49,7 +49,7 @@ Test(about_functions, function_prototypes)
         function_prototype(1, 2), TODO, "What does the function return?");
 }
 
-/* Here is the implemenation for our prototype. */
+/* Here is the implementation for our prototype. */
 int function_prototype(int i, int j) { return i + j; }
 
 Test(about_functions, function_scope_and_vars)
@@ -66,7 +66,7 @@ Test(about_functions, function_scope_and_vars)
     modify_global();
     modify_global();
     cr_assert_eq(modify_global(), TODO,
-        "What is the value of global_var after the thrid call?");
+        "What is the value of global_var after the third call?");
 
     modify_local();
     modify_local();

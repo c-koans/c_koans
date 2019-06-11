@@ -47,7 +47,7 @@ Test(about_io, streams)
 	prints to the same place as stdout.
 
 	Since it is a different stream entirely, tricks can be done such that
-	it will instead write to a different place entirely, or its ouput is
+	it will instead write to a different place entirely, or its output is
 	ignored and will not interfere with the regular output of a program.
 
 	The aforementioned "tricks" are not related to the C language, so they
@@ -125,7 +125,7 @@ Test(about_io, buffered_io)
     /*
         One of the most important aspects of the standard io library is that
 	it is buffered. What does this mean? It means that every write is not
-	immediatly written to the stream, for efficiency purposes.
+	immediately written to the stream, for efficiency purposes.
 
 	Every write is first written to a buffer in memory before it is written
 	to the stream, and is instead all written together in one big write at
@@ -136,7 +136,7 @@ Test(about_io, buffered_io)
 	stream will be reading from a buffer in memory.
 
 	To send what's in the buffer to the stream without waiting, stdio has
-	a fuction fflush that will "flush" a stream's buffer.
+	a function fflush that will "flush" a stream's buffer.
     */
 
     /*

@@ -34,7 +34,7 @@ Test(about_preprocessor, macro_definitions)
 
     /*
         You can even have macros that have arguments. This allows the macro
-        replacemnt to be different on different calls to the macro.
+        replacement to be different on different calls to the macro.
 
         You have to be careful with these macros: they may look like a function,
         but
@@ -128,7 +128,7 @@ Test(about_preprocessor, macro_concatination)
         To complete this test, assert that THIS_IS(TRUE)!
         Be wary of your usage of capital letters.
     */
-    cr_assert(THIS_IS(FALSE), "Concatination not completed.");
+    cr_assert(THIS_IS(FALSE), "Concatenation not completed.");
 }
 
 #define VARIADIC_ARGUMENTS(...) #__VA_ARGS__

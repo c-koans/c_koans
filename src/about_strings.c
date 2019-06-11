@@ -67,7 +67,7 @@ Test(about_strings, assignment)
     string[2] = 'S';
     cr_assert_str_eq("CSE 101", string, "String declared this way are mutable");
 
-    *(string + 4) = '2'; /* forgeting () will give compiling error */
+    *(string + 4) = '2'; /* forgetting () will give compiling error */
     cr_assert_str_eq("CSE 101", string, "String declared this way are mutable");
 
     (string + 4)[2] = '2';
@@ -129,7 +129,7 @@ Test(about_strings, copy)
 
 void test_a_string_length_with_sizeof(char *string)
 {
-    /* Sizeof(string) is 8 becuase the size of pointer is 8 */
+    /* Sizeof(string) is 8 because the size of pointer is 8 */
     cr_assert_eq(7, sizeof(string), "That same string gives a different size \
         when passed into this function, always use strlen function");
 }

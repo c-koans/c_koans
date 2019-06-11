@@ -33,7 +33,7 @@ Test(about_structs, struct_basics)
     cr_assert_eq(sizeof p1, TODO, "What is the size of our two ints?");
 
     /*
-        We can initialzed our structs statically, with similar syntax to array
+        We can initialized our structs statically, with similar syntax to array
         initialization
         The members are initialized in the order that they have been declared in
         the struct
