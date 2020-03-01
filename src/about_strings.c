@@ -1,4 +1,4 @@
-#include <criterion/criterion.h>
+#include "c_koans.h"
 #include <stdio.h>
 
 /*

@@ -1,5 +1,6 @@
 #include "c_koans.h"
 #include <string.h>
+#include <stdbool.h>
 
 /*
     The C Preprocessor is a powerful tool. It allows us to do many things before
