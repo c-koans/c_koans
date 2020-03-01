@@ -1,5 +1,6 @@
 #include "c_koans.h"
 #include <stdio.h>
+#include <strings.h>
 
 /*
     We have used functions from string.h, for more information take a

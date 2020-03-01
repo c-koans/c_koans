@@ -1,6 +1,7 @@
 #include "c_koans.h"
 #include <stdbool.h>
 #include <stdlib.h>
+#include <strings.h>
 
 int *malloc_func()
 {
