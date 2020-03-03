@@ -58,14 +58,14 @@ Test(about_basics, variables)
     int i = TODO;
     cr_assert_eq(i, 0xBADBEEF, "A int is 4 bytes");
 
-    long l = TODO;
+    long long l = TODO;
     cr_assert_eq(l, 0xDEBA7AB1E,
         "A long is a larger integer type than int (supports unsigned).");
 
     unsigned int ui = TODO;
     /*
         This unsigned int should exceed the maximum capacity of an INT (hint
-        INT_MAX is declared in limits.h)
+        UINT_MAX is declared in limits.h)
     */
     cr_assert_gt(ui, 0xDEADBEEF,
         "The unsigned modifier can be used on a "
