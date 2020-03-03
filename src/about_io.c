@@ -1,5 +1,6 @@
 #include "c_koans.h"
 #include <stdio.h>
+#include <strings.h>
 
 /*
     This series of koans will go over topics not entirely specific to the C
