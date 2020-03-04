@@ -101,9 +101,9 @@ Test(about_strings, sizeof_strlen)
     char *string2 = "Some String";
     char string3[10] = "CSE 101";
 
-    cr_assert_eq(11, sizeof(string2), "sizeof string2 only shows size of the \
+    cr_assert_eq(TODO, sizeof(string2), "sizeof string2 only shows size of the \
         char pointer");
-    cr_assert_eq(7, sizeof(string3), "sizeof string3 shows memory used by \
+    cr_assert_eq(TODO, sizeof(string3), "sizeof string3 shows memory used by \
         string3 array not string size");
 }
 
@@ -132,7 +132,7 @@ Test(about_strings, copy)
 void test_a_string_length_with_sizeof(char *string)
 {
     /* Sizeof(string) is 8 because the size of pointer is 8 */
-    cr_assert_eq(7, sizeof(string), "That same string gives a different size \
+    cr_assert_eq(TODO, sizeof(string), "That same string gives a different size \
         when passed into this function, always use strlen function");
 }
 
