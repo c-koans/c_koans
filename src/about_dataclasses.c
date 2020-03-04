@@ -180,7 +180,7 @@ Test(about_dataclasses, about_const)
 
     /*
         A const after the '*' in a pointer declaration defines a pointer that
-       can not point anywhere else.
+        can not point anywhere else.
     */
     int *const kp = &j;
 

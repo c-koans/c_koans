@@ -128,7 +128,7 @@ Test(about_pointers, function_pointers)
         compar: This is the function pointer for the comparison function
 
         Now, compar itself has a very tricky declaration, and we will dissect
-       it.
+        it.
 
         int (*compar)(const void *, const void *)
 
@@ -144,7 +144,7 @@ Test(about_pointers, function_pointers)
         arguments of the function being pointed to.
 
         To test your knowledge, you will now write the line of code to call
-       qsort to sort the array declared earlier. We have provided a comparison
+        qsort to sort the array declared earlier. We have provided a comparison
         function for strings that can be used by qsort.
     */
 

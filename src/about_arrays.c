@@ -86,7 +86,7 @@ Test(about_arrays, what_is_an_array)
         /*
             You can loop on arrays, as long as you handle the indexing logic
             correctly.
-     */
+        */
         yet_another_array[i] = i + 1;
     }
 
