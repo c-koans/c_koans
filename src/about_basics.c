@@ -74,9 +74,9 @@ Test(about_basics, variables)
 
     long long ll = TODO;
 
-    cr_expect_eq(ll, 0xFF,
+    cr_assert_eq(ll, 0xFF,
         "A number literal starting with 0x will be interpreted as hexadecimal");
-    cr_expect_eq(ll, 0b11111111,
+    cr_assert_eq(ll, 0b11111111,
         "A number literal starting with 0b will be interpreted as binary");
     cr_assert_eq(ll, 0377,
         "A number literal starting with 0 will be interpreted as octal");
