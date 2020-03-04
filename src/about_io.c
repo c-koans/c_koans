@@ -32,7 +32,7 @@ Test(about_io, streams)
 	waiting	until input is entered into the program.
     */
 
-    cr_assert_str_eq("stdio", TODO_S, "The standard input stream is...");
+    cr_assert_str_eq("stdin", TODO_S, "The standard input stream is...");
 
     /*
         stdout provides output, which is typically your terminal screen.
