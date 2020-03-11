@@ -1,5 +1,4 @@
 #include "c_koans.h"
-#include <string.h>
 
 /*
     A structure is simply a collection of multiple variables all within the

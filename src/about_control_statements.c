@@ -1,5 +1,4 @@
 #include "c_koans.h"
-#include <stdbool.h>
 
 /*
     As the language we are most familiar with, Java, has a syntax  heavily
