@@ -66,7 +66,7 @@ Test(about_io, printf)
     /*
         Use the references to determine which format specifier will give the
         proper output. When you complete this koan, change the literal on line
-        74 to a nonzero value. This is to avoid compilation errors.
+        72 to a nonzero value. This is to avoid compilation errors.
     */
 
 #if 0

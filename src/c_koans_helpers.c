@@ -63,9 +63,7 @@ int modify_local_static()
         calls.
 
         The static qualifier has a double meaning depending on the scope it
-        appears
-        in;
-        the next function will show this
+        appears in; the next function will show this
     */
     static int i = 0;
     i++;

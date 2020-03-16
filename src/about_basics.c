@@ -1,6 +1,6 @@
 #include "c_koans.h"
-#include <limits.h>
 #include <stdbool.h>
+#include <limits.h>
 
 Test(about_basics, intro)
 {
@@ -58,14 +58,14 @@ Test(about_basics, variables)
     int i = TODO;
     cr_assert_eq(i, 0xBADBEEF, "A int is 4 bytes");
 
-    long l = TODO;
+    long long l = TODO;
     cr_assert_eq(l, 0xDEBA7AB1E,
         "A long is a larger integer type than int (supports unsigned).");
 
     unsigned int ui = TODO;
     /*
         This unsigned int should exceed the maximum capacity of an INT (hint
-        INT_MAX is declared in limits.h)
+        UINT_MAX is declared in limits.h)
     */
     cr_assert_gt(ui, 0xDEADBEEF,
         "The unsigned modifier can be used on a "
@@ -74,18 +74,18 @@ Test(about_basics, variables)
 
     long long ll = TODO;
 
-    cr_expect_eq(ll, 0xFF,
+    cr_assert_eq(ll, 0xFF,
         "A number literal starting with 0x will be interpreted as hexadecimal");
-    cr_expect_eq(ll, 0b11111111,
+    cr_assert_eq(ll, 0b11111111,
         "A number literal starting with 0b will be interpreted as binary");
     cr_assert_eq(ll, 0377,
         "A number literal starting with 0 will be interpreted as octal");
 
-    double d = 3.50;
+    double d = TODO;
     cr_assert_float_eq(d, (7 / 2), 0.000001,
         "Just like Java, C does integer division for 7/2");
 
-    double d2 = 350e-2;
+    double d2 = TODO;
     cr_assert_float_eq(d2, 3 + (1 / 2), 0.000001,
         "Addition also effects whether a number literal is "
         "interpreted as IEEE or 2's Comp");

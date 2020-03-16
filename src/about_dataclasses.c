@@ -22,7 +22,7 @@ Test(about_dataclasses, unions)
 
     u.d = 1.01;
 
-    cr_assert_eq(u.d, TODO, "What is the value of d that we assigned?");
+    cr_assert_float_eq(u.d, TODO, 0.01, "What is the value of d that we assigned?");
     cr_assert_eq(sizeof u, TODO,
         "What is the size of the largest data type in "
         "the union?");
@@ -180,7 +180,7 @@ Test(about_dataclasses, about_const)
 
     /*
         A const after the '*' in a pointer declaration defines a pointer that
-       can not point anywhere else.
+        can not point anywhere else.
     */
     int *const kp = &j;
 

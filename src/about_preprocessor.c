@@ -1,5 +1,6 @@
 #include "c_koans.h"
 #include <string.h>
+#include <stdbool.h>
 
 /*
     The C Preprocessor is a powerful tool. It allows us to do many things before
@@ -37,8 +38,7 @@ Test(about_preprocessor, macro_definitions)
         replacement to be different on different calls to the macro.
 
         You have to be careful with these macros: they may look like a function,
-        but
-        they are just text replacement when they are expanded.
+        but they are just text replacement when they are expanded.
     */
 
     /*
@@ -73,8 +73,7 @@ Test(about_preprocessor, conditional_defines)
         Conditional logic can be done with a few different directives.
         These directives include 'if', 'elif', 'ifdef', ifndef' and 'else'
         'if', 'elif', and 'else' work as you would expect them to, so we will
-        ignore
-        these for now.
+        ignore these for now.
 
         'ifdef' and 'ifndef' check if the input string has been defined as a
         macro.

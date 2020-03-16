@@ -3,7 +3,7 @@
 
 void func(int *array)
 {
-    cr_assert_eq(sizeof(array), 0,
+    cr_assert_eq(sizeof(array), TODO,
         "That same array gives a different size "
         "when passed into this function");
 }
@@ -32,11 +32,11 @@ Test(about_arrays, what_is_an_array)
      * An array variable's name is merely a label for the address of the first
      * element in the array.
     */
-    cr_assert_eq(*array, 0,
+    cr_assert_eq(*array, TODO,
         "Dereferencing this label's address gives us the "
         "value at that point");
 
-    cr_assert_eq(*(array + 2), array[0],
+    cr_assert_eq(*(array + 2), array[TODO],
         "Dereferencing with an offset is the same as using the bracket notation"
         " to access");
 
@@ -56,7 +56,7 @@ Test(about_arrays, what_is_an_array)
         parenthesis.
     */
 
-    cr_assert_eq(sizeof(array), 0,
+    cr_assert_eq(sizeof(array), TODO,
         "sizeof an array can be tricky is it size "
         "of a pointer or sum of all memory the "
         "array takes up?");
@@ -86,7 +86,7 @@ Test(about_arrays, what_is_an_array)
         /*
             You can loop on arrays, as long as you handle the indexing logic
             correctly.
-     */
+        */
         yet_another_array[i] = i + 1;
     }
 
