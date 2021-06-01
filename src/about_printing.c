@@ -78,7 +78,7 @@ Test(about_io, printf)
 
     printf("char: TODO\n", c);
     printf("int: TODO\n", i);
-    printf("unsinged int: TODO\n", i);
+    printf("unsigned int: TODO\n", i);
     printf("hexadecimal unsigned int: TODO\n", i);
     printf("float: TODO\n", d);
     printf("long: TODO\n", l);
@@ -86,5 +86,5 @@ Test(about_io, printf)
 #endif
     cr_assert_file_contents_eq_str(stdout,
         "char: J\nint: -1\nunsigned int: 4294967295\nhexadecimal unsigned int: "
-        "ffffffff\nfloat: 3.140000\nlong: 3735928559\npointer: 0x400\n");
+        "ffffffff\nfloat: 3.140000\nlong: 3735928559\npointer: 00000400\n");
 }
