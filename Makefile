@@ -14,7 +14,7 @@ INC := -I $(INCDIR)
 EXEC := c_koans
 
 STD := gnu11
-CFLAGS := -std=$(STD) -Wall -Werror -Wno-unused-function -Wno-nonnull
+CFLAGS := -std=$(STD) -Wall -Werror -Wno-unused-function -Wno-nonnull -Wno-use-after-free
 
 CRITERION := -lcriterion
 
