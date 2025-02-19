@@ -92,8 +92,9 @@ Test(about_arrays, what_is_an_array)
 
     /*
         When we need to, we can make an array bigger to accommodate via realloc.
+        The address may change so we always reassign the pointer.
     */
-    if (!realloc(yet_another_array, INIT_ARR_SIZE * sizeof(int))) {
+    if (!(yet_another_array = realloc(yet_another_array, INIT_ARR_SIZE * sizeof(int)))) {
         exit(1);
     }
 
