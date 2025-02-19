@@ -27,8 +27,8 @@ Test(about_linked_lists, linked_list_basics)
         Here we declare two linked_list structs.
         `head` has a pointer to `list_node`.
     */
-    struct linked_list head = { 10 };
-    struct linked_list list_node = { 12 };
+    struct linked_list head = { 10, NULL };
+    struct linked_list list_node = { 12, NULL };
 
     head.next = &list_node;
 
@@ -50,7 +50,7 @@ Test(about_linked_lists, traversing_linked_list)
     /*
         Here we declare 5 linked_list structs with nodes_i pointing to nodes_i-1
     */
-    struct linked_list nodes[5] = { { 1 }, { 2, &nodes[0] }, { 3, &nodes[1] },
+    struct linked_list nodes[5] = { { 1, NULL }, { 2, &nodes[0] }, { 3, &nodes[1] },
         { 4, &nodes[2] }, { 5, &nodes[3] } };
 
     /*
@@ -99,7 +99,7 @@ struct linked_list *insert(struct linked_list *head, int val)
 
 Test(about_linked_lists, insert_into_linked_list)
 {
-    struct linked_list head = { 1 };
+    struct linked_list head = { 1, NULL };
 
     /*
         It's nice to create functions to insert/delete from linked list.
@@ -196,7 +196,7 @@ Test(about_linked_lists, doubly_linked_list)
     cr_assert_eq(sizeof(struct dbl_linked_list), TODO,
         "How much memory does it occupy?");
 
-    struct dbl_linked_list n1 = { 1 }, n2 = { 2 }, n3 = { 3 };
+    struct dbl_linked_list n1 = { 1, NULL, NULL }, n2 = { 2, NULL, NULL }, n3 = { 3, NULL, NULL };
     n1.next = &n2;
     n2.next = &n3;
     n2.prev = &n1;
