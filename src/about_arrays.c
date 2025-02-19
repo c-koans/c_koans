@@ -31,7 +31,7 @@ Test(about_arrays, what_is_an_array)
     /*
      * An array variable's name is merely a label for the address of the first
      * element in the array.
-    */
+     */
     cr_assert_eq(*array, TODO,
         "Dereferencing this label's address gives us the "
         "value at that point");
@@ -92,8 +92,10 @@ Test(about_arrays, what_is_an_array)
 
     /*
         When we need to, we can make an array bigger to accommodate via realloc.
+        The address may change so we always reassign the pointer.
     */
-    if (!realloc(yet_another_array, INIT_ARR_SIZE * sizeof(int))) {
+    if (!(yet_another_array
+            = realloc(yet_another_array, INIT_ARR_SIZE * sizeof(int)))) {
         exit(1);
     }
 
